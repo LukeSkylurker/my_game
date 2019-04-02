@@ -152,8 +152,7 @@ body {
     
         $snowflakes.animate({
             top: "100%",
-            opacity : "0",
-        }, Math.random() + 9000, function(){
+            }, Math.random() + 9000, function(){
             $(this).remove();
             // run again when all 20 snowflakes hit the floor
             if (--qt < 1) {
