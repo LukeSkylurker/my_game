@@ -1,0 +1,42 @@
+.snowflakes {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    width:80px;
+    height:80px;
+    background-image: url("wood.png");
+    border-radius: 10px;
+}
+.otherflakes {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    width:80px;
+    height:80px;
+    background-image: url("ore.png");
+    border-radius: 10px;
+}
+.bestflakes {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    width:80px;
+    height:80px;
+    background-image: url("brick.png");
+    border-radius: 10px;
+}
+body {
+	background-image: url("1957793-bigthumbnail.jpg");
+	background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+#site {
+    width:74%;
+    height:100%;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+}

@@ -3,55 +3,17 @@
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
-<div style="height: 1200px; float: left; width: 25%; background-color: white; opacity: 0.5; font-size: 18px; font-family: Arial;">
- Wood: <div class='whitecounter'></div>
-	Ore: <div class='bluecounter'></div>
-	Brick:  <div class='purplecounter'></div>
+  <link rel="stylesheet" type="text/css" href="demo.css">
+<div style="height: 1200px; float: left; width: 25%; background-color: white; opacity: 0.5; font-size: 28px; font-family: Arial;">
+   <div style="float:left;">Wood: </div><div class='whitecounter' id="woodcount" style="float:left;"></div><br />
+	<div style="float:left;">Ore: </div><div class='bluecounter' id="orecount" style="float:left;"></div><br />
+	<div style="float:left;">Brick: </div><div class='purplecounter' id="brickcount" style="float:left;"></div><br />
+    <strong>House Upgrade:</strong><button onclick="shantyFunction()">+</button>
+    <div id="shantyhouse"></div>
 </div>
 <div id="site" style="float: left;">
 	<div id="snowZone"></div>
 </div>
-<style>
-.snowflakes {
-    top:0px;
-    left:0px;
-    position:absolute;
-    z-index:200;
-    width:80px;
-    height:80px;
-    background-image: url("wood.png");
-}
-.otherflakes {
-    top:0px;
-    left:0px;
-    position:absolute;
-    z-index:200;
-    width:80px;
-    height:80px;
-    background-image: url("ore.png");
-}
-.bestflakes {
-    top:0px;
-    left:0px;
-    position:absolute;
-    z-index:200;
-    width:80px;
-    height:80px;
-    background-image: url("brick.png");
-}
-body {
-	background-image: url("1957793-bigthumbnail.jpg");
-	background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
-#site {
-    width:74%;
-    height:100%;
-    margin:0 auto;
-    position:relative;
-    overflow:hidden;
-}
-</style>
 
 <script>
 	var count = 0;
@@ -161,4 +123,20 @@ body {
         });
     }
     bestSnow();
+</script>
+<script>
+    function shantyFunction() {
+  var wood = document.getElementById('woodcount').innerHTML;
+   var ore = document.getElementById('orecount').innerHTML;
+    var brick = document.getElementById('brickcount').innerHTML;``
+  if (wood > 2 && ore > 2 && brick > 2) {
+    document.getElementById("shantyhouse").innerHTML = "Current Home: Shanty";
+    document.getElementById('woodcount').innerHTML = wood - 2;
+    document.getElementById('orecount').innerHTML = ore - 2;
+    document.getElementById('brickcount').innerHTML = brick - 2;
+  }
+  else {
+    document.getElementById("shantyhouse").innerHTML = "you need 10 wood logs and 10 bricks!";
+  }
+}
 </script>
