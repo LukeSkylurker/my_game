@@ -1,0 +1,20 @@
+<div id="demo">
+
+</div>
+<div id="demo-demo">
+
+</div>
+
+<!---
+<script>
+	let luke = window.location.href;
+	document.getElementById('demo').innerHTML = luke;
+	document.getElementById('demo-demo').innerHTML = luke.substring('file:///C:/Users/arril19/Desktop/'.length);
+	luke.substring('file:///C:/Users/arril19/Desktop/'.length) = luke;
+	document.getElementById('demo-demo-demo').innerHTML = luke;
+</script>
+--->
+<script>
+	let luke = window.location.href.substring('file:///C:/Users/arril19/Desktop/'.length);
+	document.getElementById('demo').innerHTML = luke;
+</script>

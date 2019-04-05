@@ -5,138 +5,280 @@
   <script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
   <link rel="stylesheet" type="text/css" href="demo.css">
 <div style="height: 1200px; float: left; width: 25%; background-color: white; opacity: 0.5; font-size: 28px; font-family: Arial;">
-   <div style="float:left;">Wood: </div><div class='whitecounter' id="woodcount" style="float:left;"></div><br />
-	<div style="float:left;">Ore: </div><div class='bluecounter' id="orecount" style="float:left;"></div><br />
-	<div style="float:left;">Brick: </div><div class='purplecounter' id="brickcount" style="float:left;"></div><br />
-    <strong>House Upgrade:</strong><button onclick="shantyFunction()">+</button>
-    <div id="shantyhouse"></div>
+    <div class="nav" style="display:block;">
+        <div class="navresources" style="display: block; float:left; padding-right: 30px;">Resources</div>
+        <div class="navarmory" style="display: block; float:left; padding-right: 30px; ">Armory</div>
+        <div class="navempire" style="display: block; float:left; padding-right: 30px;">Empire</div>
+    </div>
+    <div class="resources">
+            <h3>Resources</h3>
+            <div style="float:left;">Wood: </div><div class='whitecounter' id="woodcount" style="float:left;"></div><br />
+        	<div style="float:left;">Ore: </div><div class='bluecounter' id="orecount" style="float:left;"></div><br />
+        	<div style="float:left;">Brick: </div><div class='purplecounter' id="brickcount" style="float:left;"></div><br />
+            <div style="float:left;">Gold: </div><div class='goldcounter' id="goldcount" style="float:left;"></div><br />
+            <div style="float:left;">Goblin: </div><div class='goblincounter' id="goblincount" style="float:left;"></div><br />
+            <strong>House Upgrade:</strong><button onclick="shantyFunction()">+</button>
+            <div id="shantyhouse"></div>
+            <strong>Food Upgrade:</strong><button class="carrotsmart" onclick="carrotFunction()">+</button>
+            <div id="carrotnrg"></div>
+            <div class="carrotnrgcounter"></div>
+    </div>
+    <div class="armory">
+            <h3>Armory</h3>
+            <p>other text</p>
+    </div>
+    <div class="empire">
+            <h3>Empire</h3>
+            <p>other text</p>
+    </div>
+
 </div>
 <div id="site" style="float: left;">
 	<div id="snowZone"></div>
 </div>
 
 <script>
-	var count = 0;
+	let count = 0;
     $(document).on('click', '.smart', function() {
     	count++;
         $('.whitecounter').html(count);
         });
 </script>
 <script>
-	var counter = 0;
+	let counter = 0;
     $(document).on('click', '.smarter', function() {
     	counter++;
         $('.bluecounter').html(counter);
         });
 </script>
 <script>
-	var countest = 0;
+	let countest = 0;
     $(document).on('click', '.smartest', function() {
     	countest++;
         $('.purplecounter').html(countest);
         });
 </script>
+<script>
+    let goldcount = 0;
+    $(document).on('click', '.goldsmart', function() {
+        goldcount++;
+        $('.goldcounter').html(goldcount);
+        });
+</script>
+<script>
+    let carrotcount = 0;
+    $(document).on('click', '.carrotsmart', function() {
+        carrotcount++;
+        $('.carrotnrgcounter').html(carrotcount);
+        });
+</script>
+<script>
+    let goblincount = 0;
+    $(document).on('click', '.goblinsmart', function() {
+        goblincount++;
+        $('.goblincounter').html(goblincount);
+        });
+</script>
 
 <script>
-// Snow Falling
-    function fallingSnow() {
+
+    function fallingWood() {
     
-        var $snowflakes = $(), qt = 1;
+        var $woodflakes = $(), qt = 1;
         
         for (var i = 0; i < qt; ++i) {
-            var $snowflake = $('<div class="smart snowflakes"></div>');
-            $snowflake.css({
+            var $woodflake = $('<div class="smart snowflakes"></div>');
+            $woodflake.css({
                 'left': (Math.random() * $('#site').width()) + 'px',
                 'top': (- Math.random() * $('#site').height()) + 'px'
             });
             // add this snowflake to the set of snowflakes
-            $snowflakes = $snowflakes.add($snowflake);
+            $woodflakes = $woodflakes.add($woodflake);
         }
-        $('#snowZone').prepend($snowflakes);
+        $('#snowZone').prepend($woodflakes);
     
-        $snowflakes.animate({
+        $woodflakes.animate({
             top: "100%",
         }, Math.random() + 10000, function(){
             $(this).remove();
             // run again when all 20 snowflakes hit the floor
             if (--qt < 1) {
-                fallingSnow();
+                fallingWood();
             }
         });
     }
-    fallingSnow();
+    fallingWood();
 </script>
 <script>
-// Snow Falling
-    function otherSnow() {
+
+    function fallingOre() {
     
-        var $snowflakes = $(), qt = 1;
+        var $oreflakes = $(), qt = 1;
         
         for (var i = 0; i < qt; ++i) {
-            var $snowflake = $('<div class="smarter otherflakes"></div>');
-            $snowflake.css({
+            var $oreflake = $('<div class="smarter otherflakes"></div>');
+            $oreflake.css({
                 'left': (Math.random() * $('#site').width()) + 'px',
                 'top': (- Math.random() * $('#site').height()) + 'px'
             });
             // add this snowflake to the set of snowflakes
-            $snowflakes = $snowflakes.add($snowflake);
+            $oreflakes = $oreflakes.add($oreflake);
         }
-        $('#snowZone').prepend($snowflakes);
+        $('#snowZone').prepend($oreflakes);
     
-        $snowflakes.animate({
+        $oreflakes.animate({
             top: "100%",
         }, Math.random() + 8000, function(){
             $(this).remove();
             // run again when all 20 snowflakes hit the floor
             if (--qt < 1) {
-                otherSnow();
+                fallingOre();
             }
         });
     }
-    otherSnow();
+    fallingOre();
 </script>
 <script>
-// Snow Falling
-    function bestSnow() {
+
+    function fallingBrick() {
     
-        var $snowflakes = $(), qt = 1;
+        var $brickflakes = $(), qt = 1;
         
         for (var i = 0; i < qt; ++i) {
-            var $snowflake = $('<div class="smartest bestflakes"></div>');
-            $snowflake.css({
+            var $brickflake = $('<div class="smartest bestflakes"></div>');
+            $brickflake.css({
                 'left': (Math.random() * $('#site').width()) + 'px',
                 'top': (- Math.random() * $('#site').height()) + 'px'
             });
             // add this snowflake to the set of snowflakes
-            $snowflakes = $snowflakes.add($snowflake);
+            $brickflakes = $brickflakes.add($brickflake);
         }
-        $('#snowZone').prepend($snowflakes);
+        $('#snowZone').prepend($brickflakes);
     
-        $snowflakes.animate({
+        $brickflakes.animate({
             top: "100%",
             }, Math.random() + 9000, function(){
             $(this).remove();
             // run again when all 20 snowflakes hit the floor
             if (--qt < 1) {
-                bestSnow();
+                fallingBrick();
             }
         });
     }
-    bestSnow();
+    fallingBrick();
+</script>
+<script>
+// Snow Falling
+    function bestGold() {
+    
+        var $goldflakes = $(), qt = 1;
+        
+        for (var i = 0; i < qt; ++i) {
+            var $goldflake = $('<div class="goldsmart goldflakes"></div>');
+            $goldflake.css({
+                'left': (Math.random() * $('#site').width()) + 'px',
+                'top': (- Math.random() * $('#site').height()) + 'px'
+            });
+            // add this snowflake to the set of snowflakes
+            $goldflakes = $goldflakes.add($goldflake);
+        }
+        $('#snowZone').prepend($goldflakes);
+    
+        $goldflakes.animate({
+            top: "100%",
+            }, Math.random() + 9000, function(){
+            $(this).remove();
+            // run again when all 20 snowflakes hit the floor
+            if (--qt < 1) {
+                bestGold();
+            }
+        });
+    }
+    bestGold();
+</script>
+<script>
+
+    function fallingGoblin() {
+    
+        var $brickflakes = $(), qt = 1;
+        
+        for (var i = 0; i < qt; ++i) {
+            var $brickflake = $('<div class="goblinsmart goblinflakes"></div>');
+            $brickflake.css({
+                'left': (Math.random() * $('#site').width()) + 'px',
+                'top': (- Math.random() * $('#site').height()) + 'px'
+            });
+            // add this snowflake to the set of snowflakes
+            $brickflakes = $brickflakes.add($brickflake);
+        }
+        $('#snowZone').prepend($brickflakes);
+    
+        $brickflakes.animate({
+            top: "100%",
+            }, Math.random() + 20000, function(){
+            $(this).remove();
+            // run again when all 20 snowflakes hit the floor
+            if (--qt < 1) {
+                fallingGoblin();
+            }
+        });
+    }
+    fallingGoblin();
 </script>
 <script>
     function shantyFunction() {
-  var wood = document.getElementById('woodcount').innerHTML;
-   var ore = document.getElementById('orecount').innerHTML;
-    var brick = document.getElementById('brickcount').innerHTML;``
-  if (wood > 2 && ore > 2 && brick > 2) {
-    document.getElementById("shantyhouse").innerHTML = "Current Home: Shanty";
-    document.getElementById('woodcount').innerHTML = wood - 2;
-    document.getElementById('orecount').innerHTML = ore - 2;
-    document.getElementById('brickcount').innerHTML = brick - 2;
+
+  if (count > 2 && counter > 2 && countest > 2) {
+     document.getElementById("shantyhouse").innerHTML =  "<img src='shanty.png'>";
+     count = count - 2;
+     counter = counter - 2;
+     countest = counter -2;
+   $('.whitecounter').html(count);
+   $('.bluecounter').html(counter);
+   $('.purplecounter').html(countest);
   }
   else {
     document.getElementById("shantyhouse").innerHTML = "you need 10 wood logs and 10 bricks!";
   }
+ }
+
+</script>
+<script>
+    function carrotFunction() {
+  var gold = document.getElementById('goldcount').innerHTML;
+
+  if (gold > 2) {
+    document.getElementById("carrotnrg").innerHTML =  "<img width='150px' src='carrot.png'>";
+    document.getElementById('goldcount').innerHTML = gold - 2;
+
+  }
+  else {
+    document.getElementById("carrotnrg").innerHTML = "you need more gold to get carrots!";
+  }
 }
+</script>
+<script>
+$(".armory").hide();
+$(".empire").hide();
+</script>
+<script>
+$( ".navresources" ).click(function() {
+    $(".resources").show()
+  $( ".armory" ).hide();
+   $( ".empire" ).hide();
+});
+</script>
+<script>
+$( ".navempire" ).click(function() {
+    $(".empire").show()
+  $( ".resources" ).hide();
+   $( ".armory" ).hide();
+});
+</script>
+<script>
+$( ".navarmory" ).click(function() {
+    $(".armory").show()
+  $( ".empire" ).hide();
+   $( ".resources" ).hide();
+});
 </script>

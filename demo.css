@@ -28,6 +28,26 @@
     background-image: url("brick.png");
     border-radius: 10px;
 }
+.goldflakes {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    width:80px;
+    height:80px;
+    background-image: url("gold.png");
+    border-radius: 10px;
+}
+.goblinflakes {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    width:80px;
+    height:80px;
+    background-image: url("goblin.png");
+    border-radius: 10px;
+}
 body {
 	background-image: url("1957793-bigthumbnail.jpg");
 	background-repeat: no-repeat; /* Do not repeat the image */
@@ -39,4 +59,50 @@ body {
     margin:0 auto;
     position:relative;
     overflow:hidden;
+}
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+
+.resources-hide {
+    display:none;
+}
+
+.armory-hide {
+    display:none;
+}
+.empire-hide {
+    display:none;
+}
+
+
+.navresources:hover {
+background-color: grey;
+}
+.navarmory:hover {
+background-color: grey;
+}
+.navempire:hover {
+background-color: grey;
 }
