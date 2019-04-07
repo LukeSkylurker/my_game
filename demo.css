@@ -47,18 +47,25 @@
     height:80px;
     background-image: url("goblin.png");
     border-radius: 10px;
+    border: 1px solid red;
+}
+.goblinflakes:hover {
+    border: 3px solid red;
 }
 body {
 	background-image: url("1957793-bigthumbnail.jpg");
 	background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+  width: 90%;
+  height: 95%;
 }
 #site {
-    width:74%;
+    width:75%;
     height:100%;
     margin:0 auto;
     position:relative;
     overflow:hidden;
+
 }
 .tablink {
   background-color: #555;

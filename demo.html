@@ -1,3 +1,7 @@
+<head><meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+</head>
 <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -6,6 +10,10 @@
   <link rel="stylesheet" type="text/css" href="demo.css">
 <div style="height: 1200px; float: left; width: 25%; background-color: white; opacity: 0.5; font-size: 28px; font-family: Arial;">
     <div class="nav" style="display:block;">
+        <audio controls loop>
+  <source src="gamedemo.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
         <div class="navresources" style="display: block; float:left; padding-right: 30px;">Resources</div>
         <div class="navarmory" style="display: block; float:left; padding-right: 30px; ">Armory</div>
         <div class="navempire" style="display: block; float:left; padding-right: 30px;">Empire</div>
@@ -22,6 +30,8 @@
             <strong>Food Upgrade:</strong><button class="carrotsmart" onclick="carrotFunction()">+</button>
             <div id="carrotnrg"></div>
             <div class="carrotnrgcounter"></div>
+            <button onclick="saveUrlParam()">Save Parameter</button>
+            <div id="displayurl"></div>
     </div>
     <div class="armory">
             <h3>Armory</h3>
@@ -39,28 +49,32 @@
 
 <script>
 	let count = 0;
-    $(document).on('click', '.smart', function() {
-    	count++;
+    $(document).on('click touch', '.smart', function() {
+         $(".smart").remove();
+         count++;
         $('.whitecounter').html(count);
         });
 </script>
 <script>
 	let counter = 0;
-    $(document).on('click', '.smarter', function() {
+    $(document).on('click touch', '.smarter', function() {
+        $('.smarter').remove();
     	counter++;
         $('.bluecounter').html(counter);
         });
 </script>
 <script>
 	let countest = 0;
-    $(document).on('click', '.smartest', function() {
+    $(document).on('click touch', '.smartest', function() {
+         $('.smartest').remove();
     	countest++;
         $('.purplecounter').html(countest);
         });
 </script>
 <script>
     let goldcount = 0;
-    $(document).on('click', '.goldsmart', function() {
+    $(document).on('click touch', '.goldsmart', function() {
+        $('.goldsmart').remove();
         goldcount++;
         $('.goldcounter').html(goldcount);
         });
@@ -72,12 +86,21 @@
         $('.carrotnrgcounter').html(carrotcount);
         });
 </script>
+
 <script>
+
+    let goblincounterdisplay = 0;
     let goblincount = 0;
     $(document).on('click', '.goblinsmart', function() {
         goblincount++;
-        $('.goblincounter').html(goblincount);
+        if (goblincount > 5) {
+        goblincount = 0;
+        $('.goblinsmart').remove();
+        goblincounterdisplay++;
+        $('.goblincounter').html(goblincounterdisplay);
+        }
         });
+
 </script>
 
 <script>
@@ -200,20 +223,20 @@
 
     function fallingGoblin() {
     
-        var $brickflakes = $(), qt = 1;
+        var $goblinflakes = $(), qt = 1;
         
         for (var i = 0; i < qt; ++i) {
-            var $brickflake = $('<div class="goblinsmart goblinflakes"></div>');
-            $brickflake.css({
+            var $goblinflake = $('<div class="goblinsmart goblindownsmart goblinflakes">');
+            $goblinflake.css({
                 'left': (Math.random() * $('#site').width()) + 'px',
                 'top': (- Math.random() * $('#site').height()) + 'px'
             });
             // add this snowflake to the set of snowflakes
-            $brickflakes = $brickflakes.add($brickflake);
+            $goblinflakes = $goblinflakes.add($goblinflake);
         }
-        $('#snowZone').prepend($brickflakes);
+        $('#snowZone').prepend($goblinflakes);
     
-        $brickflakes.animate({
+        $goblinflakes.animate({
             top: "100%",
             }, Math.random() + 20000, function(){
             $(this).remove();
@@ -281,4 +304,9 @@ $( ".navarmory" ).click(function() {
   $( ".empire" ).hide();
    $( ".resources" ).hide();
 });
+</script>
+<script>
+function saveUrlParam(){
+document.getElementById('displayurl').innerHTML = (window.location.href + ('/?wood=' + count + '&&' + 'ore=' + counter + '&&' + 'brick=' + countest));
+}
 </script>
