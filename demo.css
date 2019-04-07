@@ -64,7 +64,7 @@ body {
     height:100%;
     margin:0 auto;
     position:relative;
-    overflow:hidden;
+    overflow:visible;
 
 }
 .tablink {
@@ -120,5 +120,11 @@ background-color: grey;
   cursor: pointer;
 }
 .smartest {
+  cursor: pointer;
+}
+.goldsmart {
+  cursor: pointer;
+}
+.goblinsmart {
   cursor: pointer;
 }
