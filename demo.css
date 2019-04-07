@@ -113,3 +113,12 @@ background-color: grey;
 .navempire:hover {
 background-color: grey;
 }
+.smart {
+  cursor: pointer;
+}
+.smarter {
+  cursor: pointer;
+}
+.smartest {
+  cursor: pointer;
+}
