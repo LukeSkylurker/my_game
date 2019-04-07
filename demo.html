@@ -1,4 +1,7 @@
 
+<head>
+    <meta name="viewport" content="user-scalable=0">
+</head>
 <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -46,7 +49,7 @@
 
 <script>
 	let count = 0;
-    $(document).on('click touch', '.smart', function() {
+    $(document).on('click touchstart', '.smart', function() {
          $(".smart").remove();
          count++;
         $('.whitecounter').html(count);
@@ -54,7 +57,7 @@
 </script>
 <script>
 	let counter = 0;
-    $(document).on('click touch', '.smarter', function() {
+    $(document).on('click touchstart', '.smarter', function() {
         $('.smarter').remove();
     	counter++;
         $('.bluecounter').html(counter);
@@ -62,7 +65,7 @@
 </script>
 <script>
 	let countest = 0;
-    $(document).on('click touch', '.smartest', function() {
+    $(document).on('click touchstart', '.smartest', function() {
          $('.smartest').remove();
     	countest++;
         $('.purplecounter').html(countest);
@@ -70,7 +73,7 @@
 </script>
 <script>
     let goldcount = 0;
-    $(document).on('click touch', '.goldsmart', function() {
+    $(document).on('click touchstart', '.goldsmart', function() {
         $('.goldsmart').remove();
         goldcount++;
         $('.goldcounter').html(goldcount);
@@ -78,7 +81,7 @@
 </script>
 <script>
     let carrotcount = 0;
-    $(document).on('click', '.carrotsmart', function() {
+    $(document).on('click touchstart', '.carrotsmart', function() {
         carrotcount++;
         $('.carrotnrgcounter').html(carrotcount);
         });
@@ -88,7 +91,7 @@
 
     let goblincounterdisplay = 0;
     let goblincount = 0;
-    $(document).on('click', '.goblinsmart', function() {
+    $(document).on('click touchstart', '.goblinsmart', function() {
         goblincount++;
         if (goblincount > 5) {
         goblincount = 0;
