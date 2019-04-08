@@ -7,18 +7,24 @@
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
-  <script src="everythingfalling.js"></script>
-  <link rel="stylesheet" type="text/css" href="demo.css">
-<div style="height: 1200px; float: left; width: 25%; background-color: white; opacity: 0.5; font-size: 28px; font-family: Arial;">
-    <div class="nav" style="display:block;">
-        <audio controls loop>
+  <script src="demo-js/everythingfalling.js"></script>
+  <link rel="stylesheet" type="text/css" href="demo-style/demo.css">
+  <div style="width:100%; height: 50px; background-color: blue;"><!--- <audio controls loop>
   <source src="gamedemo.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
-</audio>
-        <div class="navresources" style="display: block; float:left; padding-right: 30px;">Resources</div>
-        <div class="navarmory" style="display: block; float:left; padding-right: 30px; ">Armory</div>
-        <div class="navempire" style="display: block; float:left; padding-right: 30px;">Empire</div>
+</audio>--->
+ <div class="nav" style="display:block;">
+       
+        <div class="navresources allnavstyle" style="display: block; float:left; padding-right: 30px;">Resources</div>
+        <div class="navarmory allnavstyle" style="display: block; float:left; padding-right: 30px; ">Armory</div>
+        <div class="navempire allnavstyle" style="display: block; float:left; padding-right: 30px;">Empire</div>
+        <div class="navcharacter allnavstyle" style="display: block; float:left; padding-right: 30px;">Character</div>
+        <div class="navdwelling allnavstyle" style="display: block; float:left; padding-right: 30px;">Dwelling</div>
     </div>
+</div>
+<div class="newbody">
+<div style="height: 1200px; float: left; width: 25%; background-color: white; opacity: 0.5; font-size: 28px; font-family: Arial;">
+   
     <div class="resources">
             <h3>Resources</h3>
             <div style="float:left;">Wood: </div><div class='whitecounter' id="woodcount" style="float:left;"></div><br />
@@ -45,10 +51,19 @@
             <h3>Empire</h3>
             <p>other text</p>
     </div>
+    <div class="character">
+            <h3>Character</h3>
+            <p>other text</p>
+    </div>
+    <div class="dwelling">
+            <h3>Dwelling</h3>
+            <p>other text</p>
+    </div>
 
 </div>
 <div id="site" style="float: left;">
 	<div id="snowZone"></div>
+</div>
 </div>
 
 <script>
@@ -117,7 +132,7 @@
     function shantyFunction() {
 
   if (count > 2 && counter > 2 && countest > 2) {
-     document.getElementById("shantyhouse").innerHTML =  "<img src='shanty.png'>";
+     document.getElementById("shantyhouse").innerHTML =  "<img src='demo-images/shanty.png'>";
      count = count - 2;
      counter = counter - 2;
      countest = counter -2;
@@ -136,7 +151,7 @@
   var gold = document.getElementById('goldcount').innerHTML;
 
   if (gold > 2) {
-    document.getElementById("carrotnrg").innerHTML =  "<img width='150px' src='carrot.png'>";
+    document.getElementById("carrotnrg").innerHTML =  "<img width='150px' src='demo-images/carrot.png'>";
     document.getElementById('goldcount').innerHTML = gold - 2;
 
   }
@@ -148,26 +163,49 @@
 <script>
 $(".armory").hide();
 $(".empire").hide();
+$(".character").hide();
+$(".dwelling").hide();
 </script>
 <script>
 $( ".navresources" ).click(function() {
-    $(".resources").show()
+    $(".resources").show();
   $( ".armory" ).hide();
    $( ".empire" ).hide();
+   $(".character").hide();
+   $(".dwelling").hide();
 });
 </script>
 <script>
 $( ".navempire" ).click(function() {
-    $(".empire").show()
+    $(".empire").show();
   $( ".resources" ).hide();
    $( ".armory" ).hide();
+   $(".character").hide();
+   $(".dwelling").hide();
 });
 </script>
 <script>
 $( ".navarmory" ).click(function() {
-    $(".armory").show()
+    $(".armory").show();
   $( ".empire" ).hide();
    $( ".resources" ).hide();
+    $(".character").hide();
+   $(".dwelling").hide();
+});
+$( ".navcharacter" ).click(function() {
+    $(".character").show();
+  $( ".empire" ).hide();
+   $( ".resources" ).hide();
+    $(".armory").hide();
+   $(".dwelling").hide();
+});
+$( ".navdwelling" ).click(function() {
+    $(".dwelling").show();
+    $(".armory").hide()
+  $( ".empire" ).hide();
+   $( ".resources" ).hide();
+    $(".character").hide();
+   
 });
 </script>
 <script>
