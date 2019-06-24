@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
   <script src="demo-js/everythingfalling.js"></script>
   <link rel="stylesheet" type="text/css" href="demo-style/demo.css">
-  <div style="width:100%; height: 50px; background-color: blue;"><!--- <audio controls loop>
+  <div style="width:100%; height: 50px; background-color: darkblue; color: white;"><!--- <audio controls loop>
   <source src="gamedemo.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>--->
@@ -23,7 +23,7 @@
     </div>
 </div>
 <div class="newbody">
-<div style="height: 1200px; float: left; width: 25%; background-color: white; opacity: 0.5; font-size: 28px; font-family: Arial;">
+<div style="height: 1200px; float: left; width: 45%; background-color: white; opacity: 0.8; font-size: 28px; font-family: Arial;">
    
     <div class="resources">
             <h3>Resources</h3>
@@ -32,8 +32,9 @@
         	<div style="float:left;">Brick: </div><div class='purplecounter' id="brickcount" style="float:left;"></div><br />
             <div style="float:left;">Gold: </div><div class='goldcounter' id="goldcount" style="float:left;"></div><br />
             <div style="float:left;">Goblin: </div><div class='goblincounter' id="goblincount" style="float:left;"></div><br />
-            <strong>House Upgrade:</strong><button onclick="shantyFunction()">+</button>
-            <div id="shantyhouse"></div>
+            <div style="float:left;">Zombie: </div><div class='zombiecounter' id="zombiecount" style="float:left;"></div><br />
+            <div style="float:left;">Health: </div><div class='heartcounter' id="heartcount" style="float:left;"></div><br />
+            <progress id="health" style="float:left;" value="70" max="100"></progress><br />
             <strong>Food Upgrade:</strong><button class="carrotsmart" onclick="carrotFunction()">+</button>
             <div id="carrotnrg"></div>
             <div class="carrotnrgcounter"></div>
@@ -54,10 +55,13 @@
     <div class="character">
             <h3>Character</h3>
             <p>other text</p>
+            <div><img src="demo-images/characterwoman.png" style="width:300px; height:auto;">
     </div>
+</div>
     <div class="dwelling">
             <h3>Dwelling</h3>
-            <p>other text</p>
+            <strong>House Upgrade:</strong><button onclick="shantyFunction()">+</button>
+            <div id="shantyhouse"></div>
     </div>
 
 </div>
@@ -105,6 +109,16 @@
         $('.carrotnrgcounter').html(carrotcount);
         });
 </script>
+<script>
+    let heartcount = 70;
+    $(document).on('click heartstart', '.heartsmart', function() {
+         $(".heartsmart").remove();
+         heartcount++;
+        $('.heartcounter').html(heartcount);
+        $('#health').val(heartcount += 9);
+        });
+    
+</script>
 
 <script>
 
@@ -117,6 +131,21 @@
         $('.goblinsmart').remove();
         goblincounterdisplay++;
         $('.goblincounter').html(goblincounterdisplay);
+        }
+        });
+
+</script>
+<script>
+
+    let zombiecounterdisplay = 0;
+    let zombiecount = 0;
+    $(document).on('click touchstart', '.zombiesmart', function() {
+        zombiecount++;
+        if (zombiecount > 5) {
+        zombiecount = 0;
+        $('.zombiesmart').remove();
+        zombiecounterdisplay++;
+        $('.zombiecounter').html(zombiecounterdisplay);
         }
         });
 

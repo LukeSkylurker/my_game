@@ -136,9 +136,62 @@
             top: "100%",
             }, Math.random() + 20000, function(){
             $(this).remove();
+            //maybye move the remove to later. first check for existence with.length and payoff health      
             // run again when all 20 snowflakes hit the floor
             if (--qt < 1) {
                 fallingGoblin();
+            }
+        });
+    }
+
+        function fallingZombie() {
+    
+        var $zombieflakes = $(), qt = 1;
+        
+        for (var i = 0; i < qt; ++i) {
+            var $zombieflake = $('<div class="zombiesmart zombiedownsmart zombieflakes">');
+            $zombieflake.css({
+                'left': (Math.random() * $('#site').width()) + 'px',
+                'top': (- Math.random() * $('#site').height()) + 'px'
+            });
+            // add this snowflake to the set of snowflakes
+            $zombieflakes = $zombieflakes.add($zombieflake);
+        }
+        $('#snowZone').prepend($zombieflakes);
+    
+        $zombieflakes.animate({
+            top: "100%",
+            }, Math.random() + 20000, function(){
+            $(this).remove();
+            // run again when all 20 snowflakes hit the floor
+            if (--qt < 1) {
+                fallingZombie();
+            }
+        });
+    }
+
+        function fallingHeart() {
+    
+        var $heartflakes = $(), qt = 1;
+        
+        for (var i = 0; i < qt; ++i) {
+            var $heartflake = $('<div class="heartsmart heartdownsmart heartflakes">');
+            $heartflake.css({
+                'left': (Math.random() * $('#site').width()) + 'px',
+                'top': (- Math.random() * $('#site').height()) + 'px'
+            });
+            // add this snowflake to the set of snowflakes
+            $heartflakes = $heartflakes.add($heartflake);
+        }
+        $('#snowZone').prepend($heartflakes);
+    
+        $heartflakes.animate({
+            top: "100%",
+            }, Math.random() + 18000, function(){
+            $(this).remove();
+            // run again when all 20 snowflakes hit the floor
+            if (--qt < 1) {
+                fallingHeart();
             }
         });
     }
@@ -150,4 +203,6 @@
       fallingBrick();
       bestGold();
       fallingGoblin();
+      fallingZombie();
+      fallingHeart();
 }
