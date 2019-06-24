@@ -1,0 +1,131 @@
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="board">
+<div class="contain-row1">
+<div class="row row1 column1 white" div id="square1"></div><div class="row row1 column2 black" div id="square2"></div><div class="row row1 column3 white" div id="square3"></div><div class="row row1 column4 black" div id="square4"></div><div class="row row1 column5 white" div id="square5"></div><div class="row row1 column6 black" div id="square6"></div><div class="row row1 column7 white" div id="square7"></div><div class="row row1 column8 black" div id="square8"></div></div>
+<div class="contain-row2">
+<div class="row row2 column1 black" div id="square9"></div><div class="row row2 column2 white" div id="square10"></div><div class="row row2 column3 black" div id="square11"></div><div class="row row2 column4 white" div id="square12"></div><div class="row row2 column5 black" div id="square13"></div><div class="row row2 column6 white" div id="square14"></div><div class="row row2 column7 black" div id="square15"></div><div class="row row2 column8 white" div id="square16"></div></div>
+<div class="contain-row3">
+<div class="row row3 column1 white" div id="square17"></div><div class="row row3 column2 black" div id="square18"></div><div class="row row3 column3 white" div id="square19"></div><div class="row row3 column4 black" div id="square20"></div><div class="row row3 column5 white" div id="square21"></div><div class="row row3 column6 black" div id="square22"></div><div class="row row3 column7 white" div id="square23"></div><div class="row row3 column8 black" div id="square24"></div></div>
+<div class="contain-row4">
+<div class="row row4 column1 black" div id="square25"></div><div class="row row4 column2 white" div id="square26"></div><div class="row row4 column3 black" div id="square27"></div><div class="row row4 column4 white" div id="square28"></div><div class="row row4 column5 black" div id="square29"></div><div class="row row4 column6 white" div id="square30"></div><div class="row row4 column7 black" div id="square31"></div><div class="row row4 column8 white" div id="square32"></div></div>
+<div class="contain-row5">
+<div class="row row5 column1 white" div id="square33"></div><div class="row row5 column2 black" div id="square34"></div><div class="row row5 column3 white" div id="square35"></div><div class="row row5 column4 black" div id="square36"></div><div class="row row5 column5 white" div id="square37"></div><div class="row row5 column6 black" div id="square38"></div><div class="row row5 column7 white" div id="square39"></div><div class="row row5 column8 black" div id="square40"></div></div>
+<div class="contain-row6">
+<div class="row row6 column1 black" div id="square41"></div><div class="row row6 column2 white" div id="square42"></div><div class="row row6 column3 black" div id="square43"></div><div class="row row6 column4 white" div id="square44"></div><div class="row row6 column5 black" div id="square45"></div><div class="row row6 column6 white" div id="square46"></div><div class="row row6 column7 black" div id="square47"></div><div class="row row6 column8 white" div id="square48"></div></div>
+<div class="contain-row7">
+<div class="row row7 column1 white" div id="square49"></div><div class="row row7 column2 black" div id="square50"></div><div class="row row7 column3 white" div id="square51"></div><div class="row row7 column4 black" div id="square52"></div><div class="row row7 column5 white" div id="square53"></div><div class="row row7 column6 black" div id="square54"></div><div class="row row7 column7 white" div id="square55"></div><div class="row row7 column8 black" div id="square56"></div></div>
+<div class="contain-row8">
+<div class="row row8 column1 black" div id="square57"></div><div class="row row8 column2 white" div id="square58"></div><div class="row row8 column3 black" div id="square59"></div><div class="row row8 column4 white" div id="square60"></div><div class="row row8 column5 black" div id="square61"></div><div class="row row8 column6 white" div id="square62"></div><div class="row row8 column7 black" div id="square63"></div><div class="row row8 column8 white" div id="square64"></div></div>
+</div>
+<div class="button-house">
+<button class="piece-generator-red">Generate Red Piece</button>
+<button class="piece-generator-blue">Generate Blue Piece</button>
+<button class="piece-clear">Clear</button>
+</div>
+<div class="piece-contain">
+<div class="piece-house-red" style="display:block; float:left;"></div><br /><br /><br />
+<div class="piece-house-blue" style="display:block; float:left;"></div>
+</div>
+</body>
+</html>
+<style>
+	.board {
+		width:1000px;
+		height:1000px;
+	}
+	.row {
+		display: block;
+		border: 1px solid black;
+		width: 11%;
+		height: 11%;
+		float: left;
+	}
+	.white {
+		background-color: white;
+	}
+	.black {
+		background-color: white;
+	}
+	.red {
+		background-color: red;
+		height: 30px;
+		width: 30px;
+		border-radius: 15px;
+		float:left;
+		
+	}
+	.blue {
+		background-color: blue;
+		height: 30px;
+		width: 30px;
+		border-radius: 15px;
+		float:left;
+	}
+	
+	.contain-row2 {
+		width: 100%;
+		clear: both;
+	}
+	.contain-row3 {
+		width: 100%;
+		clear: both;
+	}
+	.contain-row4 {
+		width: 100%;
+		clear: both;
+	}
+	.contain-row5 {
+		width: 100%;
+		clear: both;
+	}
+	.contain-row6 {
+		width: 100%;
+		clear: both;
+	}
+	.contain-row7 {
+		width: 100%;
+		clear: both;
+	}
+	.contain-row8 {
+		width: 100%;
+		clear: both;
+	}
+</style>
+
+</html>
+
+<script type="text/javascript">
+     $(document).ready(function(){
+         $('.piece-generator-red').click(function() {
+		$('.piece-house-red').append('<div class="red"></div>').find('.red').draggable();
+});
+     });
+</script>
+
+<script type="text/javascript">
+     $(document).ready(function(){
+         $('.piece-generator-blue').click(function() {
+		$('.piece-house-blue').append('<div class="blue"></div>').find('.blue').draggable();
+});
+     });
+</script>
+<script type="text/javascript">
+     $(document).ready(function(){
+         $('.piece-clear').click(function() {
+		$('.piece-house-blue').empty();
+		$('.piece-house-red').empty();
+});
+     });
+</script>
