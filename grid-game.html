@@ -40,6 +40,119 @@
 </div>
 </body>
 </html>
+
+</html>
+
+<script type="text/javascript">
+     $(document).ready(function(){
+         $('.piece-generator-red').click(function() {
+		$('.piece-house-red').append('<div class="red"></div>').find('.red').draggable();
+});
+     });
+</script>
+
+<script type="text/javascript">
+     $(document).ready(function(){
+         $('.piece-generator-blue').click(function() {
+		$('.piece-house-blue').append('<div class="blue"></div>').find('.blue').draggable();
+});
+     });
+</script>
+<script type="text/javascript">
+     $(document).ready(function(){
+         $('.piece-clear').click(function() {
+		$('.piece-house-blue').empty();
+		$('.piece-house-red').empty();
+		$('.row').removeClass('bblue');
+		$('.row').removeClass('green');
+});
+     });
+</script>
+<script>
+
+</script>
+
+
+<script>
+$( ".row" ).on( "click", function() {
+  var index = $( ".row" ).index( this );
+    if ($( this ).hasClass('green')){
+  	$( this ).addClass('bblue');
+  	$( this ).removeClass('green');
+  }
+  else if ($( this ).hasClass('bblue')) {
+  	$( this ).removeClass('bblue');
+  }
+  else if ($( this ).hasClass('white') || $( this ).hasClass('black')) {
+  	$( this ).addClass('brown');
+  }
+});
+</script>
+<script>
+	var up = 0;
+$(document).keydown(function(keyPressed) {
+	
+	
+
+   if (keyPressed.keyCode == 39 && up <= 64 && up >= 0) {
+   	up = up + 1;
+   	var x = '#square' + up;
+   	$('.row').removeClass("green");
+   	if ($(x).hasClass("brown")) {
+     up = up - 1;
+     var x = '#square' + up;
+     $(x).addClass("green");
+     }
+     else {
+     	$(x).addClass("green");
+     }
+     console.log(x);
+   }
+    else if (keyPressed.keyCode == 40 && up <= 56 && up >= 0) {
+    up = up + 8;
+    var x = '#square' + up;
+    $('.row').removeClass("green");
+    if ($(x).hasClass("brown")) {
+     up = up - 8;
+     var x = '#square' + up;
+     $(x).addClass("green");
+     }
+     else {
+     	$(x).addClass("green");
+     }
+     console.log(x);
+   }
+   else if (keyPressed.keyCode == 38 && up <= 65 && up >= 9) {
+   	  up = up - 8;
+   	var x = '#square' + up;
+     $('.row').removeClass("green");
+     if ($(x).hasClass("brown")) {
+     up = up + 8;
+     var x = '#square' + up;
+     $(x).addClass("green");
+     }
+     else {
+     	$(x).addClass("green");
+     }
+     console.log(x);
+   }
+   else if (keyPressed.keyCode == 37 && up <= 65 && up >= 1) {
+   	up = up - 1;
+   	var x = '#square' + up;
+     $('.row').removeClass("green");
+      if ($(x).hasClass("brown")) {
+     up = up + 1;
+     var x = '#square' + up;
+     $(x).addClass("green");
+     }
+     else {
+     	$(x).addClass("green");
+     }
+     console.log(x);
+   }
+  });
+</script>
+
 <style>
 	.board {
 		width:1000px;
@@ -52,12 +165,10 @@
 		height: 11%;
 		float: left;
 	}
-	.white {
-		background-color: white;
-	}
-	.black {
-		background-color: white;
-	}
+	.green {
+			background-color: green;
+		}
+	
 	.red {
 		background-color: red;
 		height: 30px;
@@ -65,6 +176,17 @@
 		border-radius: 15px;
 		float:left;
 		
+	}
+
+	.brown {
+		background-color: brown;
+	}
+
+	.bblue {
+		background-color: lightblue;
+	}
+	.wwhite {
+		background-color: white;
 	}
 	.blue {
 		background-color: blue;
@@ -103,29 +225,3 @@
 		clear: both;
 	}
 </style>
-
-</html>
-
-<script type="text/javascript">
-     $(document).ready(function(){
-         $('.piece-generator-red').click(function() {
-		$('.piece-house-red').append('<div class="red"></div>').find('.red').draggable();
-});
-     });
-</script>
-
-<script type="text/javascript">
-     $(document).ready(function(){
-         $('.piece-generator-blue').click(function() {
-		$('.piece-house-blue').append('<div class="blue"></div>').find('.blue').draggable();
-});
-     });
-</script>
-<script type="text/javascript">
-     $(document).ready(function(){
-         $('.piece-clear').click(function() {
-		$('.piece-house-blue').empty();
-		$('.piece-house-red').empty();
-});
-     });
-</script>
