@@ -63,8 +63,8 @@
          $('.piece-clear').click(function() {
 		$('.piece-house-blue').empty();
 		$('.piece-house-red').empty();
-		$('.row').removeClass('bblue');
-		$('.row').removeClass('green');
+		$('.row').removeClass('water');
+		$('.row').removeClass('character');
 });
      });
 </script>
@@ -76,15 +76,16 @@
 <script>
 $( ".row" ).on( "click", function() {
   var index = $( ".row" ).index( this );
-    if ($( this ).hasClass('green')){
-  	$( this ).addClass('bblue');
-  	$( this ).removeClass('green');
+    if ($( this ).hasClass('tree')){
+  	$( this ).addClass('water');
+  	$( this ).removeClass('tree');
   }
-  else if ($( this ).hasClass('bblue')) {
-  	$( this ).removeClass('bblue');
+  else if ($( this ).hasClass('water')) {
+  	$( this ).addClass('rock');
+  	$( this ).removeClass('water');
   }
   else if ($( this ).hasClass('white') || $( this ).hasClass('black')) {
-  	$( this ).addClass('brown');
+  	$( this ).addClass('tree');
   }
 });
 </script>
@@ -97,56 +98,68 @@ $(document).keydown(function(keyPressed) {
    if (keyPressed.keyCode == 39 && up <= 64 && up >= 0) {
    	up = up + 1;
    	var x = '#square' + up;
-   	$('.row').removeClass("green");
-   	if ($(x).hasClass("brown")) {
+   	$('.row').removeClass("character");
+   	$('.row').removeClass("character-right");
+    $('.row').removeClass("character-left");
+    $('.row').removeClass("character-back");
+   	if ($(x).hasClass("tree") || $(x).hasClass("rock") || $(x).hasClass("water")) {
      up = up - 1;
      var x = '#square' + up;
-     $(x).addClass("green");
+     $(x).addClass("character-right");
      }
      else {
-     	$(x).addClass("green");
+     	$(x).addClass("character-right");
      }
      console.log(x);
    }
     else if (keyPressed.keyCode == 40 && up <= 56 && up >= 0) {
     up = up + 8;
     var x = '#square' + up;
-    $('.row').removeClass("green");
-    if ($(x).hasClass("brown")) {
+    $('.row').removeClass("character");
+    $('.row').removeClass("character-right");
+    $('.row').removeClass("character-left");
+    $('.row').removeClass("character-back");
+    if ($(x).hasClass("tree") || $(x).hasClass("rock") || $(x).hasClass("water")) {
      up = up - 8;
      var x = '#square' + up;
-     $(x).addClass("green");
+     $(x).addClass("character");
      }
      else {
-     	$(x).addClass("green");
+     	$(x).addClass("character");
      }
      console.log(x);
    }
    else if (keyPressed.keyCode == 38 && up <= 65 && up >= 9) {
    	  up = up - 8;
    	var x = '#square' + up;
-     $('.row').removeClass("green");
-     if ($(x).hasClass("brown")) {
+     $('.row').removeClass("character");
+     $('.row').removeClass("character-right");
+     $('.row').removeClass("character-left");
+     $('.row').removeClass("character-back");
+     if ($(x).hasClass("tree") || $(x).hasClass("rock") || $(x).hasClass("water")) {
      up = up + 8;
      var x = '#square' + up;
-     $(x).addClass("green");
+     $(x).addClass("character-back");
      }
      else {
-     	$(x).addClass("green");
+     	$(x).addClass("character-back");
      }
      console.log(x);
    }
    else if (keyPressed.keyCode == 37 && up <= 65 && up >= 1) {
    	up = up - 1;
    	var x = '#square' + up;
-     $('.row').removeClass("green");
-      if ($(x).hasClass("brown")) {
+     $('.row').removeClass("character");
+        $('.row').removeClass("character-right");
+    $('.row').removeClass("character-left");
+    $('.row').removeClass("character-back");
+      if ($(x).hasClass("tree") || $(x).hasClass("rock") || $(x).hasClass("water")) {
      up = up + 1;
      var x = '#square' + up;
-     $(x).addClass("green");
+     $(x).addClass("character-left");
      }
      else {
-     	$(x).addClass("green");
+     	$(x).addClass("character-left");
      }
      console.log(x);
    }
@@ -157,16 +170,26 @@ $(document).keydown(function(keyPressed) {
 	.board {
 		width:1000px;
 		height:1000px;
+		
 	}
 	.row {
 		display: block;
-		border: 1px solid black;
 		width: 11%;
 		height: 11%;
 		float: left;
+		background-color: tan;
 	}
-	.green {
-			background-color: green;
+	.character {
+			background-image: url("grid-pic/character.png");
+		}
+		.character-right {
+			background-image: url("grid-pic/character-right.png");
+		}
+		.character-left {
+			background-image: url("grid-pic/character-left.png");
+		}
+		.character-back {
+			background-image: url("grid-pic/character-back.png");
 		}
 	
 	.red {
@@ -178,12 +201,15 @@ $(document).keydown(function(keyPressed) {
 		
 	}
 
-	.brown {
-		background-color: brown;
+	.tree {
+		background-image: url("grid-pic/tree.png");
+	}
+	.rock {
+		background-image: url("grid-pic/rock.png");
 	}
 
-	.bblue {
-		background-color: lightblue;
+	.water {
+		background-image: url("grid-pic/water.png");
 	}
 	.wwhite {
 		background-color: white;
@@ -224,4 +250,6 @@ $(document).keydown(function(keyPressed) {
 		width: 100%;
 		clear: both;
 	}
+
+
 </style>
