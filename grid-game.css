@@ -100,37 +100,39 @@ border-radius: 12px;
      padding-left: 10px;
 }
 
-
+.sort-on {
+  background-color: green;
+}
 	.row {
 		display: block;
 		width: 55px;
 		height: 55px;
 		float: left;
-		background-color: tan;
+		background-color: transparent;
     
 
 	}
 	.char {
-			background-image: url("grid-pic/character.png");
+			background-image: url("grid-pic/character-sprite.png");
       -webkit-animation: slideDown 0.3s forwards;
   -moz-animation: slideDown 0.3s forwards;
   animation: slideDown 0.3s forwards;
       
 		}
 		.char-right {
-			background-image: url("grid-pic/character-right.png");
+			background-image: url("grid-pic/character-sprite-right.png");
       -webkit-animation: slideRight 0.3s forwards;
   -moz-animation: slideRight 0.3s forwards;
   animation: slideRight 0.3s forwards;
 		}
 		.char-left {
-			background-image: url("grid-pic/character-left.png");
+			background-image: url("grid-pic/character-sprite-left.png");
       -webkit-animation: slideLeft 0.3s forwards;
   -moz-animation: slideLeft 0.3s forwards;
   animation: slideLeft 0.3s forwards;
 		}
 		.char-back {
-			background-image: url("grid-pic/character-back.png");
+			background-image: url("grid-pic/character-sprite-back.png");
       -webkit-animation: slideUp 0.3s forwards;
   -moz-animation: slideUp 0.3s forwards;
   animation: slideUp 0.3s forwards;
@@ -143,16 +145,16 @@ border-radius: 12px;
 
 
     .char-n {
-      background-image: url("grid-pic/character.png");    
+      background-image: url("grid-pic/character-sprite.png");    
     }
      .char-left-n {
-      background-image: url("grid-pic/character-left.png");    
+      background-image: url("grid-pic/character-sprite-left.png");    
     }
       .char-right-n {
-      background-image: url("grid-pic/character-right.png");    
+      background-image: url("grid-pic/character-sprite-right.png");    
     }
       .char-back-n {
-      background-image: url("grid-pic/character-back.png");    
+      background-image: url("grid-pic/character-sprite-back.png");    
     }
 	
 	.red {
@@ -164,9 +166,9 @@ border-radius: 12px;
 		
 	}
 
-	.maple-tree {
-		background-image: url("grid-pic/tree.png");
-	}
+
+
+	
   .zombie {
     background-image: url("grid-pic/zombie.png");
   }
@@ -178,11 +180,41 @@ border-radius: 12px;
   }
 	.iron-ore {
 		background-image: url("grid-pic/rock.png");
+    background-position: center;
+    background-repeat: no-repeat;
 	}
 
-	.water {
-		background-image: url("grid-pic/water.png");
+	.water-top-left {
+		background-image: url("grid-pic/water-sprites/water-top-left.png");
 	}
+  .water-top-right {
+    background-image: url("grid-pic/water-sprites/water-top-right.png");
+  }
+  .water-middle {
+    background-image: url("grid-pic/water-sprites/water-middle.png");
+  }
+  .water-bottom-left {
+    background-image: url("grid-pic/water-sprites/water-sprite-bottom-left.png");
+  }
+  .water-bottom-right {
+    background-image: url("grid-pic/water-sprites/water-bottom-right.png");
+  }
+
+.maple-tree {
+    background-image: url("grid-pic/tree.png");
+  }
+  .tree-spring {
+    background-image: url("grid-pic/spring-tree.png");
+  }
+  .tree-winter {
+    background-image: url("grid-pic/winter-tree.png");
+  }
+  .tree-fall {
+    background-image: url("grid-pic/fall-tree.png");
+  }
+ 
+
+
 	.wwhite {
 		background-color: white;
 	}
@@ -255,7 +287,7 @@ border-radius: 12px;
     clear: both;
   }
 .board {
-  background-color: tan;
+  background-image: url('grid-pic/sand.jpg');
 }
 /*
 .tree.highlight {

@@ -12,7 +12,13 @@
 </head>
 
 <body>
-
+<div class="button-menu" style="position: absolute; top: 20; left: 20;">
+	<button id="tree-sort">Trees</button>
+	<button id="ore-sort">Ores</button>
+	<button id="water-sort">Waters</button>
+	<button id="enemy-sort">Enemies</button>
+	<button id="chests-sort">Chests</button>
+</div>
 <div class="board">
 <div class="contain-row1">
 			<div class="row row1 column1 white" div id="square1"></div>
@@ -310,11 +316,96 @@
 
 </html>
 
-<script type="text/javascript">
- 
+<script>
+ $( "#water-sort" ).on( "click", function() {
+    $( '.row' ).toggleClass('water-ready');
+    $( '#water-sort' ).toggleClass('sort-on');
+  });
+ $( "#tree-sort" ).on( "click", function() {
+    $( '.row' ).toggleClass('tree-ready');
+    $( '#tree-sort' ).toggleClass('sort-on');
+  });
+  $( "#enemy-sort" ).on( "click", function() {
+    $( '.row' ).toggleClass('enemy-ready');
+    $( '#enemy-sort' ).toggleClass('sort-on');
+  });
+</script>
+<script>
+
+$( ".row" ).on( "click", function() {
+
+if ($('.row').hasClass('water-ready')) {
+	var index = $( ".water-ready" ).index( this );
+    if ($( this ).hasClass('water-top-left')){
+  	$( this ).addClass('water-top-right');
+  	$( this ).removeClass('water-top-left');
+  }
+  else if ($( this ).hasClass('water-top-right')) {
+  	$( this ).addClass('water-middle');
+  	$( this ).removeClass('water-top-right');
+  }
+   else if ($( this ).hasClass('water-middle')) {
+    $( this ).addClass('water-bottom-right');
+    $( this ).removeClass('water-middle');
+  }
+  else if ($( this ).hasClass('water-bottom-right')) {
+    $( this ).addClass('water-bottom-left');
+    $( this ).removeClass('water-bottom-right');
+  }
+  else if ($( this ).hasClass('water-bottom-left')) {
+    $( this ).removeClass('water-bottom-left');
+     $( this ).removeClass('brown');
+  }
+  else if ($( this ).hasClass('water-ready')) {
+  	$( this ).addClass('water-top-left');
+  	$( this ).addClass('brown');
+  }
+}
+else if ($('.row').hasClass('tree-ready')) {
+	var index = $( ".tree-ready" ).index( this );
+    if ($( this ).hasClass('maple-tree')){
+  	$( this ).addClass('tree-fall');
+  	$( this ).removeClass('maple-tree');
+  }
+  else if ($( this ).hasClass('tree-fall')) {
+  	$( this ).addClass('tree-spring');
+  	$( this ).removeClass('tree-fall');
+  }
+   else if ($( this ).hasClass('tree-spring')) {
+    $( this ).addClass('tree-winter');
+    $( this ).removeClass('tree-spring');
+  }
+  
+  else if ($( this ).hasClass('tree-winter')) {
+    $( this ).removeClass('tree-winter');
+     $( this ).removeClass('brown');
+  }
+  else if ($( this ).hasClass('tree-ready')) {
+  	$( this ).addClass('maple-tree');
+  	$( this ).addClass('brown');
+  }
+}
+else if ($('.row').hasClass('enemy-ready')) {
+	var index = $( ".enemy-ready" ).index( this );
+  
+  if ($( this ).hasClass('goblin')){
+  	$( this ).addClass('zombie');
+  	$( this ).removeClass('goblin');
+  }
+  else if ($( this ).hasClass('zombie')) {
+       $( this ).removeClass('brown');
+        $( this ).removeClass('zombie');
+  } 
+  else if ($( this ).hasClass('enemy-ready')) {
+  	$( this ).addClass('goblin');
+  	$( this ).addClass('brown');
+  }
+}
+});
 </script>
 
 <script>
+	/*
 $( ".row" ).on( "click", function() {
   var index = $( ".row" ).index( this );
     if ($( this ).hasClass('maple-tree')){
@@ -341,13 +432,13 @@ $( ".row" ).on( "click", function() {
       $( this ).removeClass('brown');
       $( this ).removeClass('chest');
   }
-
   else if ($( this ).hasClass('white') || $( this ).hasClass('black')) {
   	$( this ).addClass('maple-tree');
     $( this ).addClass('brown');
   }
 });
 </script>
+
 <script>
 	var up = 0;
 $(document).keydown(function(keyPressed) {
