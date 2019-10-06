@@ -1,12 +1,26 @@
 
+  .header-title {
+    text-align: center;
+    position: absolute;
+    left: 465;
+    width: 970px;
+    height: 48px;
+    top:7;
+    font-family: Arial;
+    font-size: 30px;
+    background-color: lightgreen;
+
+  }
   .contain-body {
     background-color: darkgreen;
   }
   .board {
-		width:912px;
-		height:912px;
-    margin-left: 482px;
+		width:880px;
+		height:880px;
+    margin-left: 498px;
     border: 5px solid black;
+    margin-top: 55px;
+    background-image: url('grid-pic/sand.jpg');
 	}
 
 .left-menu {
@@ -23,6 +37,7 @@
   width:450px;
   height: 912px;
   position: absolute;
+  overflow-y: hidden;
   top:8;
   left:1435;
   background-image: url('grid-pic/right-side-bk-img.PNG');
@@ -166,9 +181,6 @@ border-radius: 12px;
 		
 	}
 
-
-
-	
   .zombie {
     background-image: url("grid-pic/zombie.png");
   }
@@ -178,11 +190,22 @@ border-radius: 12px;
   .chest {
     background-image: url("grid-pic/chest.png");
   }
+  .sides {
+    background-image: url("grid-pic/world-bk.PNG");
+  }
 	.iron-ore {
 		background-image: url("grid-pic/rock.png");
     background-position: center;
     background-repeat: no-repeat;
 	}
+
+  .building {
+    background-image: url("grid-pic/building.png");
+  }
+
+  .quest-giver {
+    background-image: url("grid-pic/quest-giver.png");
+  }
 
 	.water-top-left {
 		background-image: url("grid-pic/water-sprites/water-top-left.png");
@@ -203,6 +226,11 @@ border-radius: 12px;
 .maple-tree {
     background-image: url("grid-pic/tree.png");
   }
+.maple-tree:hover, .hightlight {
+  cursor: url('grid-pic/axe.png'), auto; 
+}
+
+
   .tree-spring {
     background-image: url("grid-pic/spring-tree.png");
   }
@@ -286,9 +314,7 @@ border-radius: 12px;
     width: 100%;
     clear: both;
   }
-.board {
-  background-image: url('grid-pic/sand.jpg');
-}
+
 /*
 .tree.highlight {
   cursor: url('grid-pic/axe.png'), auto;
@@ -296,8 +322,7 @@ border-radius: 12px;
 */
 .dialogue-box {
     position: absolute;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-left: 540px;
     top: 25%;
     width: 800px;
     height: 500px;
