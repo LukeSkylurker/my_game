@@ -5,12 +5,17 @@
     left: 465;
     width: 970px;
     height: 48px;
-    top:7;
+    top:5;
     font-family: Arial;
     font-size: 30px;
     background-color: lightgreen;
 
   }
+
+.header-title p {
+    line-height: 0px;
+    padding-top: 0px;
+}
   .contain-body {
     background-color: darkgreen;
   }
@@ -19,15 +24,34 @@
 		height:880px;
     margin-left: 498px;
     border: 5px solid black;
-    margin-top: 55px;
+    margin-top: 52px;
     background-image: url('grid-pic/sand.jpg');
 	}
+
+#tabs li {
+  display: inline;
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: brown;
+  font-size: 18px;
+  font-family: Arial;
+  height: 55px;
+  padding: 15px;
+  padding-right: 4px;
+  padding-right: 4px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
 
 .left-menu {
   width:450px;
   height: 912px;
   position: absolute;
-  top:8;
+  top:6;
   left:7;
   background-image: url('grid-pic/left-side-bk-img.PNG');
   border: 5px solid black;
@@ -38,7 +62,7 @@
   height: 912px;
   position: absolute;
   overflow-y: hidden;
-  top:8;
+  top:6;
   left:1435;
   background-image: url('grid-pic/right-side-bk-img.PNG');
   border: 5px solid black;
@@ -225,20 +249,21 @@ border-radius: 12px;
 
 .maple-tree {
     background-image: url("grid-pic/tree.png");
+    cursor: url('grid-pic/axe.png'), auto;
   }
-.maple-tree:hover, .hightlight {
-  cursor: url('grid-pic/axe.png'), auto; 
-}
 
 
   .tree-spring {
     background-image: url("grid-pic/spring-tree.png");
+    cursor: url('grid-pic/axe.png'), auto;
   }
   .tree-winter {
     background-image: url("grid-pic/winter-tree.png");
+    cursor: url('grid-pic/axe.png'), auto;
   }
   .tree-fall {
     background-image: url("grid-pic/fall-tree.png");
+    cursor: url('grid-pic/axe.png'), auto;
   }
  
 

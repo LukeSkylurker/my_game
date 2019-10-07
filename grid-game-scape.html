@@ -12,44 +12,60 @@
 
 <script
   src="variables.js"></script>
-
+<script>
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+  </script>
 
 
   <link rel="stylesheet" type="text/css" href="grid-game.css">
+
 </head>
 
 <body>
-	<div class="header-title" id="board-load">Welcome to Traveler's Kingdom!</div>
+	<div class="header-title" id="board-load"><p>Welcome to Traveler's Kingdom!</p></div>
 <div class="contain-body">
 <div class="left-menu">
 	<div class=layer>
-	<div id="accordion">
-  <h3>Inventory</h3>
+		<div id="tabs">
+  <ul style="display: inline-block; width: 100%;padding-left: 0px; text-align: center;">
+    <li><a href="#tabs-1" style="display: inline-block; width:25%;">Inventory</a></li>
+    <li><a href="#tabs-2" style="display: inline-block; width:25%;">Quests</a></li>
+    <li><a href="#tabs-3" style="display: inline-block; width:25%;">Crafting</a></li>
+  </ul>
+  <div id="tabs-1">
+    <div id="accordion">
+  <h3>Wood</h3>
   <div>
     
-    	<h4><strong>Wood</strong></h4>
+    	<h4><strong>Category 1</strong></h4>
  			<p>Maple:<span class="report-maple-wood"></span></p>
  			<p>Pine:<span class="report-pine-wood"></span></p>
  			<p>Ash:<span class="report-ash-wood"></span></p>
  			<p>Cedar:<span class="report-cedar-wood"></span></p>
- 	 	<h4><strong>Fish</strong></h4>
+ </div>
+  <h3>Fish</h3>	
+  <div>
+ 	 	<h4><strong>Category 1</strong></h4>
     
     		<p>Blue Gill:<span class="report-bluegill-fish"></span></p>
  			<p>Bass:<span class="report-bass-fish"></span></p>
  			<p>Catfish:<span class="report-catfish-fish"></span></p>
  			<p>Tuna:<span class="report-tuna-fish"></span></p>
- 		
-    	<h4><strong>Ore</strong></h4>
+ </div>
+ <h3>Ore</h3>
+ <div>
+    	<h4><strong>Category 1</strong></h4>
     	
     		<p>Iron Ore:<span class="report-iron-ore"></span></p>
  			<p>Copper Ore:<span class="report-copper-ore"></span></p>
  			<p>Siler Ore:<span class="report-silver-ore"></span></p>
  			<p>Gold Ore:<span class="report-gold-ore"></span></p>
  			<p>Platinum Ore:<span class="report-platinum-ore"></span></p>
- 		
+ </div>		
  	
-  </div>
-  <h3>Quests</h3>
+ <h3>Quests</h3>
  <div>
     
     	<h4><strong>Active Quest</strong></h4>
@@ -64,19 +80,29 @@
   </div>
   <h3>Craft</h3>
   <div>
-  
-    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+  	<h4><strong>Category 1</strong></h4>
+    <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus
     et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
     faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-    mauris vel est.
-  
-    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    mauris vel est.</p>
+  	<h4><strong>Category 2</strong></h4>
+    <p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos.
+    inceptos himenaeos.</p>
    
  
 </div>
 </div>
+  </div>
+  <div id="tabs-2">
+    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+  </div>
+  <div id="tabs-3">
+    <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+    <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+  </div>
+</div>
+	
 </div>
 </div>
 
@@ -217,6 +243,7 @@ $(document).keydown(function(keyPressed) {
 </script>
 
 <script>
+	/*
 	$( "#choice-exit-top" ).on( "click", function() {
 	$('.nothing1').remove();
 	$('dialogue-box').remove();
@@ -258,4 +285,5 @@ $( "#harvest-bass-fish" ).on( "click", function() {
 	$('.report-bass-fish').html(bassFish);
 	$('.running-dialogue').prepend('<p>you harvested 1 fish</p>');
 });
+*/
 </script>

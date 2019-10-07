@@ -1,7 +1,7 @@
 <script>
-	$( "#choice-exit-top" ).on( "click", function() {
+	$("#choice-exit-top" ).on( "click", function() {
 	$('.nothing1').remove();
-	$('dialogue-box').remove();
+	$('.dialogue-box').remove();
   	$('.board-squares-contain').load('grid-2.html');
     $('.dialogue-contain').load('dialogue-box-page.html');
     up = 233;
@@ -9,7 +9,7 @@
     	    });
 $( "#choice-exit-bottom" ).on( "click", function() {
 	$('.nothing2').remove();
-	$('dialogue-box').remove();
+	$('.dialogue-box').remove();
   	$('.board-squares-contain').load('grid-1.html');
   	$('.dialogue-contain').load('dialogue-box-page.html');
     up = 24;
@@ -33,6 +33,10 @@ $( "#harvest-bass-fish" ).on( "click", function() {
 	$('.report-bass-fish').html(bassFish);
 	$('.running-dialogue').prepend('<p>you harvested 1 fish</p>');
 });
+$( "#take-quest" ).on( "click", function() {
+	$('.dialogue-all').hide();
+	$('.running-dialogue').prepend('<p>you took a quest!</p>');
+});
 </script>
 <div class="dialogue-box dialogue-all" style="display:none; text-align: center;">
 
@@ -53,6 +57,7 @@ $( "#harvest-bass-fish" ).on( "click", function() {
 						</div>
 
 						<div class="dialogue-quest-giver dialogue-all" style="display:none;"><h2>Quests</h2>
+							<p>Hi There! You look new here. You seem like you are the perfect person to go on my very prestigious quest. There is a pesky goblin that live by the river named GooberNobber. You can miss him. Well, maybe you can. You should probably just kill all the goblins by the river. If you do I'll be forever grateful and give you some tips on how to survive here in Traveler's Kingdom!</p>
 						<button class="dialogue-btn" id="take-quest">Take Quest</button><button class="cancel">Be a Chicken</button>
 						</div>
 					
