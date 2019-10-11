@@ -1,0 +1,581 @@
+<head>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+<script src="variables.js"></script>
+ 
+<script>
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+  </script>
+
+
+  <link rel="stylesheet" type="text/css" href="grid-game.css">
+
+</head>
+
+<body>
+	<div class="header-title" id="board-load"><p>Welcome to Traveler's Kingdom!</p><div style="display:hidden;">
+<div id="myInput" type="text" value="Swag">
+</div>
+<div id="mimi">All HTML [0] will be saved</div>
+<button id="luke" onclick="getAllHtml()">Save</button></div></div>
+<div class="contain-body">
+<div class="left-menu">
+	<div class="layer">
+		<div id="tabs" class="ui-tabs ui-corner-all ui-widget ui-widget-content">
+  <ul style="display: inline-block; width: 100%;padding-left: 0px; text-align: center;" role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+    <li role="tab" tabindex="0" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active" aria-controls="tabs-1" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true"><a href="#tabs-1" style="display: inline-block; width:25%;" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-1">Inventory</a></li>
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-2" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false"><a href="#tabs-2" style="display: inline-block; width:25%;" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-2">Quests</a></li>
+    <li role="tab" tabindex="-1" class="ui-tabs-tab ui-corner-top ui-state-default ui-tab" aria-controls="tabs-3" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="#tabs-3" style="display: inline-block; width:25%;" role="presentation" tabindex="-1" class="ui-tabs-anchor" id="ui-id-3">Crafting</a></li>
+  </ul>
+  <div id="tabs-1" aria-labelledby="ui-id-1" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false">
+    <div id="accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+  <h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-header-active ui-state-active ui-accordion-icons" role="tab" id="ui-id-4" aria-controls="ui-id-5" aria-selected="true" aria-expanded="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>Wood</h3>
+  <div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content ui-accordion-content-active" id="ui-id-5" aria-labelledby="ui-id-4" role="tabpanel" aria-hidden="false" style="height: 280px;">
+    
+    	<h4><strong>Category 1</strong></h4>
+ 			<p>Maple:<span class="report-maple-wood">2</span></p>
+ 			<p>Pine:<span class="report-pine-wood"></span></p>
+ 			<p>Ash:<span class="report-ash-wood"></span></p>
+ 			<p>Cedar:<span class="report-cedar-wood"></span></p>
+ </div>
+  <h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-6" aria-controls="ui-id-7" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Fish</h3>	
+  <div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-7" aria-labelledby="ui-id-6" role="tabpanel" aria-hidden="true" style="display: none; height: 280px;">
+ 	 	<h4><strong>Category 1</strong></h4>
+    
+    		<p>Blue Gill:<span class="report-bluegill-fish"></span></p>
+ 			<p>Bass:<span class="report-bass-fish">1</span></p>
+ 			<p>Catfish:<span class="report-catfish-fish"></span></p>
+ 			<p>Tuna:<span class="report-tuna-fish"></span></p>
+ </div>
+ <h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-8" aria-controls="ui-id-9" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Ore</h3>
+ <div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-9" aria-labelledby="ui-id-8" role="tabpanel" aria-hidden="true" style="display: none; height: 280px;">
+    	<h4><strong>Category 1</strong></h4>
+    	
+    		<p>Iron Ore:<span class="report-iron-ore">1</span></p>
+ 			<p>Copper Ore:<span class="report-copper-ore"></span></p>
+ 			<p>Siler Ore:<span class="report-silver-ore"></span></p>
+ 			<p>Gold Ore:<span class="report-gold-ore"></span></p>
+ 			<p>Platinum Ore:<span class="report-platinum-ore"></span></p>
+ </div>		
+ 	
+
+  
+</div>
+  </div>
+  <div id="tabs-2" aria-labelledby="ui-id-2" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+  	<div id="accordion">
+    <h3>Quests</h3>
+  <div>
+  	<h4><strong>Category 1</strong></h4>
+    <p>Save Travelors Kingdom!</p>
+  	<h4><strong>Category 2</strong></h4>
+    <p>Kill the Goblins by the River</p>
+   </div>
+ 
+</div>
+  </div>
+  <div id="tabs-3" aria-labelledby="ui-id-3" role="tabpanel" class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="true" style="display: none;">
+    <div id="accordion">
+    <h3>Craft</h3>
+  <div>
+  	<h4><strong>Category 1</strong></h4>
+    <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+    mauris vel est.</p>
+  	<h4><strong>Category 2</strong></h4>
+    <p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+    inceptos himenaeos.</p>
+   </div>
+ 
+</div>
+  </div>
+</div>
+	
+</div>
+</div>
+
+<div class="board">
+	<div class="board-squares-contain">
+<div class="nothing1">
+<div class="contain-row1">
+			<div class="row row1 column1 white brown sides" id="square1"></div>
+			<div class="row row1 column2 black brown sides" id="square2"></div>
+			<div class="row row1 column3 white brown sides" id="square3"></div>
+			<div class="row row1 column4 black brown sides" id="square4"></div>
+			<div class="row row1 column5 white brown sides" id="square5"></div>
+			<div class="row row1 column6 black brown sides" id="square6"></div>
+			<div class="row row1 column7 white brown sides" id="square7"></div>
+			<div class="row row1 column8 black brown exit-top" id="square8"></div>
+			<div class="row row1 column9 black brown sides" id="square9"></div>
+			<div class="row row1 column10 black brown sides" id="square10"></div>
+			<div class="row row1 column11 black brown sides" id="square11"></div>
+			<div class="row row1 column12 black brown sides" id="square12"></div>
+			<div class="row row1 column13 black brown sides" id="square13"></div>
+			<div class="row row1 column14 black brown sides" id="square14"></div>
+			<div class="row row1 column15 black brown sides" id="square15"></div>
+			<div class="row row1 column16 black brown sides" id="square16"></div>
+</div>
+<div class="contain-row2">
+			<div class="row row2 column1 white brown sides" id="square17"></div>
+			<div class="row row2 column2 black" id="square18"></div>
+			<div class="row row2 column3 white" id="square19"></div>
+			<div class="row row2 column4 black maple-tree brown" id="square20"></div>
+			<div class="row row2 column5 white brown iron-ore" id="square21"></div>
+			<div class="row row2 column6 black" id="square22"></div>
+			<div class="row row2 column7 white maple-tree brown" id="square23"></div>
+			<div class="row row2 column8 black" id="square24"></div>
+			<div class="row row2 column9 black" id="square25"></div>
+			<div class="row row2 column10 black" id="square26"></div>
+			<div class="row row2 column11 black brown water-middle" id="square27"></div>
+			<div class="row row2 column12 black" id="square28"></div>
+			<div class="row row2 column13 black" id="square29"></div>
+			<div class="row row2 column14 black brown zombie" id="square30"></div>
+			<div class="row row2 column15 black maple-tree brown" id="square31"></div>
+			<div class="row row2 column16 black brown sides" id="square32"></div>
+</div>
+<div class="contain-row3">
+			<div class="row row3 column1 white brown sides" id="square33"></div>
+			<div class="row row3 column2 black" id="square34"></div>
+			<div class="row row3 column3 white" id="square35"></div>
+			<div class="row row3 column4 black" id="square36"></div>
+			<div class="row row3 column5 white" id="square37"></div>
+			<div class="row row3 column6 black" id="square38"></div>
+			<div class="row row3 column7 white" id="square39"></div>
+			<div class="row row3 column8 black" id="square40"></div>
+			<div class="row row3 column9 black" id="square41"></div>
+			<div class="row row3 column10 black" id="square42"></div>
+			<div class="row row3 column11 black brown water-middle" id="square43"></div>
+			<div class="row row3 column12 black" id="square44"></div>
+			<div class="row row3 column13 black maple-tree brown" id="square45"></div>
+			<div class="row row3 column14 black" id="square46"></div>
+			<div class="row row3 column15 black" id="square47"></div>
+			<div class="row row3 column16 black brown sides" id="square48"></div>
+</div>
+<div class="contain-row4">
+			<div class="row row4 column1 white brown sides" id="square49"></div>
+			<div class="row row4 column2 black" id="square50"></div>
+			<div class="row row4 column3 white" id="square51"></div>
+			<div class="row row4 column4 black" id="square52"></div>
+			<div class="row row4 column5 white" id="square53"></div>
+			<div class="row row4 column6 black" id="square54"></div>
+			<div class="row row4 column7 white" id="square55"></div>
+			<div class="row row4 column8 black" id="square56"></div>
+			<div class="row row4 column9 black maple-tree brown" id="square57"></div>
+			<div class="row row4 column10 black" id="square58"></div>
+			<div class="row row4 column11 black brown water-bottom-left" id="square59"></div>
+			<div class="row row4 column12 black brown water-top-right" id="square60"></div>
+			<div class="row row4 column13 black brown iron-ore" id="square61"></div>
+			<div class="row row4 column14 black" id="square62"></div>
+			<div class="row row4 column15 black" id="square63"></div>
+			<div class="row row4 column16 black brown sides" id="square64"></div>
+</div>
+<div class="contain-row5">
+			<div class="row row5 column1 white brown sides" id="square65"></div>
+			<div class="row row5 column2 black" id="square66"></div>
+			<div class="row row5 column3 white" id="square67"></div>
+			<div class="row row5 column4 black" id="square68"></div>
+			<div class="row row5 column5 white" id="square69"></div>
+			<div class="row row5 column6 black char" id="square70"></div>
+			<div class="row row5 column7 white maple-tree brown" id="square71"></div>
+			<div class="row row5 column8 black brown iron-ore" id="square72"></div>
+			<div class="row row5 column9 black" id="square73"></div>
+			<div class="row row5 column10 black" id="square74"></div>
+			<div class="row row5 column11 black goblin brown" id="square75"></div>
+			<div class="row row5 column12 black brown water-middle" id="square76"></div>
+			<div class="row row5 column13 black brown water-middle" id="square77"></div>
+			<div class="row row5 column14 black brown water-top-right" id="square78"></div>
+			<div class="row row5 column15 black brown iron-ore" id="square79"></div>
+			<div class="row row5 column16 black brown sides" id="square80"></div>
+</div>
+<div class="contain-row6">
+			<div class="row row6 column1 white brown sides" id="square81"></div>
+			<div class="row row6 column2 black" id="square82"></div>
+			<div class="row row6 column3 white" id="square83"></div>
+			<div class="row row6 column4 black" id="square84"></div>
+			<div class="row row6 column5 white" id="square85"></div>
+			<div class="row row6 column6 black" id="square86"></div>
+			<div class="row row6 column7 white" id="square87"></div>
+			<div class="row row6 column8 black" id="square88"></div>
+			<div class="row row6 column9 black" id="square89"></div>
+			<div class="row row6 column10 black" id="square90"></div>
+			<div class="row row6 column11 black" id="square91"></div>
+			<div class="row row6 column12 black brown water-middle" id="square92"></div>
+			<div class="row row6 column13 black brown water-middle" id="square93"></div>
+			<div class="row row6 column14 black brown water-middle" id="square94"></div>
+			<div class="row row6 column15 black" id="square95"></div>
+			<div class="row row6 column16 black brown sides" id="square96"></div>
+</div>
+<div class="contain-row7">
+			<div class="row row7 column1 white brown sides" id="square97"></div>
+			<div class="row row7 column2 black" id="square98"></div>
+			<div class="row row7 column3 white" id="square99"></div>
+			<div class="row row7 column4 black" id="square100"></div>
+			<div class="row row7 column5 white" id="square101"></div>
+			<div class="row row7 column6 black" id="square102"></div>
+			<div class="row row7 column7 white" id="square103"></div>
+			<div class="row row7 column8 black quest-giver brown" id="square104"></div>
+			<div class="row row7 column9 black" id="square105"></div>
+			<div class="row row7 column10 black" id="square106"></div>
+			<div class="row row7 column11 black maple-tree brown" id="square107"></div>
+			<div class="row row7 column12 black brown water-bottom-left" id="square108"></div>
+			<div class="row row7 column13 black brown water-middle" id="square109"></div>
+			<div class="row row7 column14 black brown water-bottom-right" id="square110"></div>
+			<div class="row row7 column15 black" id="square111"></div>
+			<div class="row row7 column16 black brown sides" id="square112"></div>
+</div>
+<div class="contain-row8">
+			<div class="row row8 column1 white brown sides" id="square113"></div>
+			<div class="row row8 column2 black" id="square114"></div>
+			<div class="row row8 column3 white" id="square115"></div>
+			<div class="row row8 column4 black" id="square116"></div>
+			<div class="row row8 column5 white maple-tree brown" id="square117"></div>
+			<div class="row row8 column6 black" id="square118"></div>
+			<div class="row row8 column7 white brown iron-ore" id="square119"></div>
+			<div class="row row8 column8 black" id="square120"></div>
+			<div class="row row8 column9 black maple-tree brown" id="square121"></div>
+			<div class="row row8 column10 black" id="square122"></div>
+			<div class="row row8 column11 black" id="square123"></div>
+			<div class="row row8 column12 black brown iron-ore" id="square124"></div>
+			<div class="row row8 column13 black brown water-middle" id="square125"></div>
+			<div class="row row8 column14 black" id="square126"></div>
+			<div class="row row8 column15 black maple-tree brown" id="square127"></div>
+			<div class="row row8 column16 black brown sides" id="square128"></div>
+</div>
+<div class="contain-row9">
+			<div class="row row9 column1 white brown sides" id="square129"></div>
+			<div class="row row9 column2 black" id="square130"></div>
+			<div class="row row9 column3 white" id="square131"></div>
+			<div class="row row9 column4 black" id="square132"></div>
+			<div class="row row9 column5 white brown iron-ore" id="square133"></div>
+			<div class="row row9 column6 black" id="square134"></div>
+			<div class="row row9 column7 white" id="square135"></div>
+			<div class="row row9 column8 black maple-tree brown" id="square136"></div>
+			<div class="row row9 column9 black maple-tree brown" id="square137"></div>
+			<div class="row row9 column10 black maple-tree brown" id="square138"></div>
+			<div class="row row9 column11 black" id="square139"></div>
+			<div class="row row9 column12 black" id="square140"></div>
+			<div class="row row9 column13 black brown water-middle" id="square141"></div>
+			<div class="row row9 column14 black" id="square142"></div>
+			<div class="row row9 column15 black" id="square143"></div>
+			<div class="row row9 column16 black brown sides" id="square144"></div>
+</div>
+<div class="contain-row10">
+			<div class="row row10 column1 white brown sides" id="square145"></div>
+			<div class="row row10 column2 black" id="square146"></div>
+			<div class="row row10 column3 white" id="square147"></div>
+			<div class="row row10 column4 black" id="square148"></div>
+			<div class="row row10 column5 white" id="square149"></div>
+			<div class="row row10 column6 black" id="square150"></div>
+			<div class="row row10 column7 white" id="square151"></div>
+			<div class="row row10 column8 black" id="square152"></div>
+			<div class="row row10 column9 black" id="square153"></div>
+			<div class="row row10 column10 black maple-tree brown" id="square154"></div>
+			<div class="row row10 column11 black" id="square155"></div>
+			<div class="row row10 column12 black" id="square156"></div>
+			<div class="row row10 column13 black brown water-middle" id="square157"></div>
+			<div class="row row10 column14 black goblin brown" id="square158"></div>
+			<div class="row row10 column15 black" id="square159"></div>
+			<div class="row row10 column16 black brown sides" id="square160"></div>
+</div>
+<div class="contain-row11">
+			<div class="row row11 column1 white brown sides" id="square161"></div>
+			<div class="row row11 column2 black" id="square162"></div>
+			<div class="row row11 column3 white maple-tree brown" id="square163"></div>
+			<div class="row row11 column4 black" id="square164"></div>
+			<div class="row row11 column5 white" id="square165"></div>
+			<div class="row row11 column6 black" id="square166"></div>
+			<div class="row row11 column7 white" id="square167"></div>
+			<div class="row row11 column8 black" id="square168"></div>
+			<div class="row row11 column9 black" id="square169"></div>
+			<div class="row row11 column10 black" id="square170"></div>
+			<div class="row row11 column11 black" id="square171"></div>
+			<div class="row row11 column12 black water-top-left brown" id="square172"></div>
+			<div class="row row11 column13 black brown water-middle" id="square173"></div>
+			<div class="row row11 column14 black brown water-top-right" id="square174"></div>
+			<div class="row row11 column15 black maple-tree brown" id="square175"></div>
+			<div class="row row11 column16 black brown sides" id="square176"></div>
+</div>
+<div class="contain-row12">
+			<div class="row row12 column1 white brown sides" id="square177"></div>
+			<div class="row row12 column2 black brown iron-ore" id="square178"></div>
+			<div class="row row12 column3 white brown iron-ore" id="square179"></div>
+			<div class="row row12 column4 black" id="square180"></div>
+			<div class="row row12 column5 white" id="square181"></div>
+			<div class="row row12 column6 black" id="square182"></div>
+			<div class="row row12 column7 white maple-tree brown" id="square183"></div>
+			<div class="row row12 column8 black brown iron-ore" id="square184"></div>
+			<div class="row row12 column9 black" id="square185"></div>
+			<div class="row row12 column10 black maple-tree brown" id="square186"></div>
+			<div class="row row12 column11 black water-top-left brown" id="square187"></div>
+			<div class="row row12 column12 black brown water-bottom-right" id="square188"></div>
+			<div class="row row12 column13 black brown tree-spring" id="square189"></div>
+			<div class="row row12 column14 black brown water-middle" id="square190"></div>
+			<div class="row row12 column15 black" id="square191"></div>
+			<div class="row row12 column16 black brown sides" id="square192"></div>
+</div>
+<div class="contain-row13">
+			<div class="row row13 column1 white brown sides" id="square193"></div>
+			<div class="row row13 column2 black maple-tree brown" id="square194"></div>
+			<div class="row row13 column3 white brown iron-ore" id="square195"></div>
+			<div class="row row13 column4 black" id="square196"></div>
+			<div class="row row13 column5 white" id="square197"></div>
+			<div class="row row13 column6 black" id="square198"></div>
+			<div class="row row13 column7 white" id="square199"></div>
+			<div class="row row13 column8 black" id="square200"></div>
+			<div class="row row13 column9 black" id="square201"></div>
+			<div class="row row13 column10 black" id="square202"></div>
+			<div class="row row13 column11 black brown water-middle" id="square203"></div>
+			<div class="row row13 column12 black brown tree-spring" id="square204"></div>
+			<div class="row row13 column13 black" id="square205"></div>
+			<div class="row row13 column14 black brown water-middle" id="square206"></div>
+			<div class="row row13 column15 black" id="square207"></div>
+			<div class="row row13 column16 black brown sides" id="square208"></div>
+</div>
+<div class="contain-row14">
+			<div class="row row14 column1 white brown sides" id="square209"></div>
+			<div class="row row14 column2 black brown iron-ore" id="square210"></div>
+			<div class="row row14 column3 white brown zombie" id="square211"></div>
+			<div class="row row14 column4 black maple-tree brown" id="square212"></div>
+			<div class="row row14 column5 white brown iron-ore" id="square213"></div>
+			<div class="row row14 column6 black" id="square214"></div>
+			<div class="row row14 column7 white" id="square215"></div>
+			<div class="row row14 column8 black" id="square216"></div>
+			<div class="row row14 column9 black" id="square217"></div>
+			<div class="row row14 column10 black water-top-left brown" id="square218"></div>
+			<div class="row row14 column11 black brown water-bottom-right" id="square219"></div>
+			<div class="row row14 column12 black goblin brown" id="square220"></div>
+			<div class="row row14 column13 black" id="square221"></div>
+			<div class="row row14 column14 black brown water-bottom-left" id="square222"></div>
+			<div class="row row14 column15 black brown water-middle" id="square223"></div>
+			<div class="row row14 column16 black brown sides" id="square224"></div>
+</div>
+<div class="contain-row15">
+			<div class="row row15 column1 white brown sides" id="square225"></div>
+			<div class="row row15 column2 black" id="square226"></div>
+			<div class="row row15 column3 white" id="square227"></div>
+			<div class="row row15 column4 black" id="square228"></div>
+			<div class="row row15 column5 white" id="square229"></div>
+			<div class="row row15 column6 black" id="square230"></div>
+			<div class="row row15 column7 white maple-tree brown" id="square231"></div>
+			<div class="row row15 column8 black" id="square232"></div>
+			<div class="row row15 column9 black" id="square233"></div>
+			<div class="row row15 column10 black brown water-middle" id="square234"></div>
+			<div class="row row15 column11 black" id="square235"></div>
+			<div class="row row15 column12 black" id="square236"></div>
+			<div class="row row15 column13 black" id="square237"></div>
+			<div class="row row15 column14 black" id="square238"></div>
+			<div class="row row15 column15 black" id="square239"></div>
+			<div class="row row15 column16 black brown sides" id="square240"></div>
+</div>
+<div class="contain-row16">
+			<div class="row row16 column1 white brown sides" id="square241"></div>
+			<div class="row row16 column2 black brown sides" id="square242"></div>
+			<div class="row row16 column3 white brown sides" id="square243"></div>
+			<div class="row row16 column4 black brown sides" id="square244"></div>
+			<div class="row row16 column5 white brown sides" id="square245"></div>
+			<div class="row row16 column6 black brown sides" id="square246"></div>
+			<div class="row row16 column7 white brown sides" id="square247"></div>
+			<div class="row row16 column8 black brown sides" id="square248"></div>
+			<div class="row row16 column9 black brown sides" id="square249"></div>
+			<div class="row row16 column10 black brown sides" id="square250"></div>
+			<div class="row row16 column11 black brown sides" id="square251"></div>
+			<div class="row row16 column12 black brown sides" id="square252"></div>
+			<div class="row row16 column13 black brown sides" id="square253"></div>
+			<div class="row row16 column14 black brown sides" id="square254"></div>
+			<div class="row row16 column15 black brown sides" id="square255"></div>
+			<div class="row row16 column16 black brown sides" id="square256"></div>
+</div>
+</div>
+
+
+ <script src="grid.js"></script></div>
+</div>
+
+
+<div class="dialogue-contain">
+<div class="dialogue-box dialogue-all" style="text-align: center; display: none;">
+
+						<div class="dialogue-exit-top dialogue-all" style="display:none;"><h2>Exit</h2>
+						<button class="dialogue-btn" id="choice-exit-top">Exit this area?</button><button class="cancel">Stay here</button>
+						</div>
+
+						<div class="dialogue-exit-bottom dialogue-all" style="display:none;"><h2>Exit</h2>
+						<button class="dialogue-btn" id="choice-exit-bottom">Exit this area?</button><button class="cancel">Stay here</button>
+						</div>
+
+						<div class="dialogue-maple-tree dialogue-all" style="display: none;"><h2>Tree area</h2>
+						<button class="dialogue-btn" id="harvest-maple-wood">Harvest Wood?</button><button class="cancel">Cancel</button>
+						</div>
+
+						<div class="dialogue-iron-ore dialogue-all" style="display: none;"><h2>Mining area</h2>
+						<button class="dialogue-btn" id="harvest-iron-ore">Mine for Ore</button><button class="cancel">Cancel</button>
+						</div>
+
+						<div class="dialogue-quest-giver dialogue-all" style="display: none;"><h2>Quests</h2>
+							<p>Hi There! You look new here. You seem like you are the perfect person to go on my very prestigious quest. There is a pesky goblin that live by the river named GooberNobber. You can miss him. Well, maybe you can. You should probably just kill all the goblins by the river. If you do I'll be forever grateful and give you some tips on how to survive here in Traveler's Kingdom!</p>
+						<button class="dialogue-btn" id="take-quest">Take Quest</button><button class="cancel">Be a Chicken</button>
+						</div>
+					
+						
+						<div class="dialogue-water dialogue-all" style="display: none;"><h2>Fishing area</h2><button class="dialogue-btn" id="harvest-bass-fish">Go Fishing?</button><button class="cancel">Cancel</button>
+							<div class="meter">
+								<span style="width: 25%">r</span>
+							</div>
+						</div>
+					</div>
+<script src="grid.js"></script>
+</div>
+
+</div>
+
+					
+
+
+<div class="right-menu">
+	<div class="layer">
+		<div class="running-dialogue"><p>you harvested 1 fish</p><p>you took a quest!</p><p>you harvested 1 ore of iron</p><p>you harvested 1 log of maple wood</p><p>you harvested 1 log of maple wood</p></div>
+	</div>
+</div>
+
+
+
+
+
+<script>
+
+$( "#board-load" ).on( "click", function() {
+  	$('.board-squares-contain').load('grid-1.html');
+  	$('.dialogue-contain').load('dialogue-box-page.html');
+    	    });
+
+</script>
+
+<script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script>
+  <script>
+  $( function() {
+    $( "#accordion-inventory" ).accordion();
+  } );
+  </script>
+
+<script>
+
+
+</script>
+
+<script>
+	var up = 18;
+$(document).keydown(function(keyPressed) {
+	
+	
+   if (keyPressed.keyCode == 68 && up <= 255 && up >= 0) {
+   	
+   	up = up + 1;
+   	var x = '#square' + up;
+    $('.row').removeClass("char char-right char-left char-back char-n char-right-n char-left-n char-back-n highlight");
+     if ($(x).hasClass("brown")) {
+     
+      $(x).addClass('highlight');
+	     up = up - 1;
+	     var x = '#square' + up;
+	     $(x).addClass("char-right-n");
+	     }
+	     else {
+	     	$(x).addClass("char-right");
+	       }
+	     console.log(x);
+   }
+    
+
+    else if (keyPressed.keyCode == 83 && up <= 240 && up >= 0) {
+    up = up + 16;
+    var x = '#square' + up;
+    $('.row').removeClass("char char-right char-left char-back char-n char-right-n char-left-n char-back-n highlight");
+    if ($(x).hasClass("brown")) {
+     
+      $(x).addClass('highlight');
+     up = up - 16;
+     var x = '#square' + up;
+     $(x).addClass("char-n");
+     }
+     else {
+     	$(x).addClass("char");
+     }
+     console.log(x);
+   }
+
+
+   else if (keyPressed.keyCode == 87 && up <= 256 && up >= 17) {
+   	  up = up - 16;
+   	var x = '#square' + up;
+    $('.row').removeClass("char char-right char-left char-back char-n char-right-n char-left-n char-back-n highlight");
+     if ($(x).hasClass("brown")) {
+
+     $(x).addClass('highlight');
+     up = up + 16;
+     var x = '#square' + up;
+     $(x).addClass("char-back-n");
+     }
+     else {
+     	$(x).addClass("char-back");
+     }
+     console.log(x);
+   }
+
+
+
+   else if (keyPressed.keyCode == 65 && up <= 256 && up >= 1) {
+   	up = up - 1;
+   	var x = '#square' + up;
+     $('.row').removeClass("char char-right char-left char-back char-n char-right-n char-left-n char-back-n highlight");
+      if ($(x).hasClass("brown")) {
+      
+     $(x).addClass('highlight');
+     up = up + 1;
+     var x = '#square' + up;
+     $(x).addClass("char-left-n");
+     }
+     else {
+     	$(x).addClass("char-left");
+     }
+     console.log(x);
+   }
+
+ else if (keyPressed.keyCode == 27) {
+   	$('.dialogue-all').hide();
+   }
+  });
+</script>
+
+
+<div style="display:hidden;">
+<div id="myInput" type="text" value="Swag">
+</div>
+<div id="mimi">All HTML [0] will be saved</div>
+<button id="luke" onclick="getAllHtml()">Save</button></div>
+
+<script>
+  function getAllHtml() {
+    var test = document.getElementsByTagName("html")[0].innerHTML;
+    document.getElementById("myInput").value = test;
+    var text = document.getElementById("myInput").value;
+    var blob = new Blob([text], { type: "text/plain"});
+    var anchor = document.createElement("a");
+    anchor.download = "my-filename.html";
+    anchor.href = window.URL.createObjectURL(blob);
+    anchor.target ="_blank";
+    anchor.style.display = "none"; // just to be safe!
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+ }
+</script></body>

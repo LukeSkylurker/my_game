@@ -74,4 +74,66 @@ $( "#take-quest" ).on( "click", function() {
   randomItems();
 });
 
+//everything fish related
 
+              function createProgressbar(id, duration, callback) {
+                // We select the div that we want to turn into a progressbar
+                var progressbar = document.getElementById(id);
+                progressbar.className = 'progressbar';
+                // We create the div that changes width to show progress
+                var progressbarinner = document.createElement('div');
+                progressbarinner.className = 'inner';
+                // Now we set the animation parameters
+                progressbarinner.style.animationDuration = duration;
+                // Eventually couple a callback
+                if (typeof(callback) === 'function') {
+                  progressbarinner.addEventListener('animationend', callback);
+                }
+                // Append the progressbar to the main progressbardiv
+                progressbar.appendChild(progressbarinner);
+                // When everything is set up we start the animation
+                progressbarinner.style.animationPlayState = 'running';
+              }
+              var fishprobsA = [1000, 1500, 2000, 2200, 2500, 3000];
+              var fishrandom1 = fishprobsA[Math.floor(Math.random() * fishprobsA.length)];
+              $('.cast').on('click', function() {
+                $('.cast').hide();
+                $('#fishing-result').empty();
+                createProgressbar('progressbar4', '6s', function() {
+                  $('#fishing-result').prepend('<img src="grid-pic/fish-hook.png" width="50px">');
+                  $('#fishing-result').prepend('<p>you did not catch a fish</p>');
+                  $('#progressbar4').empty();
+                  $('#progressbar4').removeClass();
+                $('.cast').show();       
+                });
+               });
+              $('.cast').on('click', function() {
+               setTimeout(function(){
+                       $('.pull').addClass('fish-bite-alert');
+                      }, fishrandom1);
+              });
+              setInterval(function(){
+                      if ($('.pull').hasClass('fish-bite-alert'))
+                       $('.pull').removeClass('fish-bite-alert');
+                      }, 1000);
+              $('.pull').on('click', function() {
+                if ($('.pull').hasClass('fish-bite-alert')) {
+                $('#fishing-result').prepend('<p>YOU CAUGHT A FISH!</p>');
+                $('#fishing-result').prepend('<img src="grid-pic/fish-bite.png" width="100px">');
+                bassFish++;
+                $('.report-bass-fish').html(bassFish);
+                $('.running-dialogue').prepend('<p>you harvested 1 fish</p>');
+                $('.pull').removeClass('fish-bite-alert');
+                $('#progressbar4').empty();
+                  $('#progressbar4').removeClass();
+                  $('.cast').show();
+              }
+                else {
+                $('.pull').removeClass('fish-bite-alert');
+                $('#progressbar4').empty();
+                  $('#progressbar4').removeClass();
+                $('#fishing-result').prepend('<p>you did not catch a fish</p>');
+                $('#fishing-result').prepend('<img src="grid-pic/fish-hook.png" width="50px">');
+                $('.cast').show();
+                }
+              });
