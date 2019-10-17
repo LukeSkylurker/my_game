@@ -1,3 +1,4 @@
+
 var mapleWood = 0;
 var pineWood = 0;
 var ashWood = 0;

@@ -100,7 +100,7 @@ border-radius: 12px;
 }
 #accordion div {
   background-color: white;
-   height: 280px;
+   height: 480px;
    overflow-y: scroll;
 }
 
@@ -222,6 +222,52 @@ border-radius: 12px;
     background-position: center;
     background-repeat: no-repeat;
 	}
+.sword-sprite {
+  background-image: url("grid-pic/sword.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ring-sprite {
+  background-image: url("grid-pic/ring.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.boots-sprite {
+  background-image: url("grid-pic/boots.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.neclace-sprite {
+  background-image: url("grid-pic/neclace.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.chest-plate-sprite {
+  background-image: url("grid-pic/chest-plate.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.shoulder-plate-sprite {
+  background-image: url("grid-pic/shoulder-plates.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.shield-sprite {
+  background-image: url("grid-pic/shield.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.knife-sprite {
+  background-image: url("grid-pic/knife.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
   .building {
     background-image: url("grid-pic/building.png");

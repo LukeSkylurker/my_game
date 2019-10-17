@@ -115,7 +115,7 @@ $( "#take-quest" ).on( "click", function() {
               setInterval(function(){
                       if ($('.pull').hasClass('fish-bite-alert'))
                        $('.pull').removeClass('fish-bite-alert');
-                      }, 1000);
+                      }, 1500);
               $('.pull').on('click', function() {
                 if ($('.pull').hasClass('fish-bite-alert')) {
                 $('#fishing-result').prepend('<p>YOU CAUGHT A FISH!</p>');
