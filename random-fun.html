@@ -1,0 +1,41 @@
+<h2>High Brow Insult Generator</h2>
+<h3 id="result"></h3>
+<input type="button" onclick="randomItems()" value="submit">
+<script>
+function randomItems() {
+
+var itemsA = ["malodorus", "putrid", "repulsive", "noxious", "vile", "ill-favored", "loathsome", "huffish","bumptious","disdainful","solipstistic"];
+var randomItem1 = itemsA[Math.floor(Math.random() * itemsA.length)];
+console.log(randomItem1);
+var finalItem = randomItem1;
+
+var typeA = ["bothersome", "vexatious", "exastperating", "chafing", "nettlesome", "irksome", "pestiferous","rebarbative", "pestilential", "deleterious", "pernicious"];
+var randomType1 = typeA[Math.floor(Math.random() * typeA.length)];
+console.log(randomType1);
+var finalType = randomType1;
+
+var lastA = ["clot", "golem", "lump", "dunce", "dolt", "nit", "dullard","cluck","bane"];
+var randomLast1 = lastA[Math.floor(Math.random() * lastA.length)];
+console.log(randomLast1);
+var finalLast = randomLast1;
+
+var momA = ["misshapen","frightful","homely","beastly","appalling"];
+var momFirst = momA[Math.floor(Math.random() * momA.length)];
+console.log(momFirst);
+var finalMomA = momFirst;
+
+var momB = ["floss-forgetting","flatulance-blaming","paper-crinkling","oil-toting","pefume-abusing"];
+var momSecond = momB[Math.floor(Math.random() * momB.length)];
+console.log(momSecond);
+var finalMomB = momSecond;
+
+var momC = ["strumpet","tramp","courtesan","hussy"];
+var momThird = momC[Math.floor(Math.random() * momC.length)];
+console.log(momThird);
+var finalMomC = momThird;
+
+
+
+document.getElementById('result').innerHTML = "You sir, are a " + finalItem + " " + finalType + " " + finalLast + ", and your mother was a " + finalMomA + " " + finalMomB + " " + finalMomC;
+}
+</script>
