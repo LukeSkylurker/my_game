@@ -1,0 +1,111 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+encode: <input type="text" id="input-text" maxlength="32">(32 character limit, no special characters)<br />
+decode: <input type="text" id="interpret-text"><br />
+<button id="btn-run">Encode</button>
+<button id="btn-interpret">Decode</button>
+<button id="rearrange" onclick="rearrangeStr()">Change Iteration</button>
+<div id="result">input result:</div>
+<div id="interpret-result">interpret result:</div>
+Iteration:<div id="display-iteration"></div><br />
+Message to Send == <div id="message-to-send"></div>
+<script>
+var masterLib1 = ["Qy1vaNdD8bpXBWGxg3T+uFY0PjMi7UznwSCH6KtO2ARZf4ck9qVrmeJshEolI5L","7ClLAIS0hNkKFbY3GgWtnfc5ZvVMw+BjyPpqJHusTOD4Xm96xz2de1QEriRa8Uo","bvESw7ajJGLP1f3FVp5RsWNhxY9DI6oOXgnzdKil+mrQktyU2BqZcH840CeTMuA","cEX eu2SITlVvB6iwnqKZkHpAJyNhb045W9sOUQ1LoG8aMdFmzrgDYRtCfPxj73"];
+var string64 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789";
+var lib1 = masterLib1[0];
+var lib2 = masterLib1[1];
+var lib3 = masterLib1[2];
+var lib4 = masterLib1[3];
+var y = Math.floor(Math.random() * 60) + 1;
+
+function rearrangeStr() {
+    xa = lib1.slice(0,y);
+    lib1 = lib1.replace(xa,'');
+    lib1 = lib1 + xa;
+    xb = lib2.slice(0,y);
+    lib2 = lib2.replace(xb,'');
+    lib2 = lib2 + xb;
+    xc = lib3.slice(0,y);
+    lib3 = lib3.replace(xc,'');
+    lib3 = lib3 + xc;
+    xd = lib4.slice(0,y);
+    lib4 = lib4.replace(xd,'');
+    lib4 = lib4 + xd;
+    console.log(lib1 + ',' + lib2 + ',' + lib3 + ',' + lib4);
+    document.getElementById('display-iteration').innerHTML = y;
+}
+
+var shuffled = string64.split('').sort(function(){return 0.5-Math.random()}).join('');
+console.log(shuffled);
+var inputText;
+var interpretText;
+
+$(document).ready(function(){
+  $("#btn-run").click(function(){
+    console.log('something');
+    $('#result').empty();
+    inputText = document.getElementById('input-text').value;
+   // $("p").slideToggle();
+   for(i=0;i<inputText.length;i++) {
+        if (i < 8) {
+        var m = inputText[i];
+        var n = string64.indexOf(m);
+        var o = lib1[n];
+        $('#result').append(o);
+        }
+        else if (i < 16) {
+        var m = inputText[i];
+        var n = string64.indexOf(m);
+        var o = lib2[n];
+        $('#result').append(o);
+        }
+        else if (i < 24) {
+        var m = inputText[i];
+        var n = string64.indexOf(m);
+        var o = lib3[n];
+        $('#result').append(o);
+        }
+        else {
+        var m = inputText[i];
+        var n = string64.indexOf(m);
+        var o = lib4[n];
+        $('#result').append(o);
+        }
+        };
+});
+  });
+
+$(document).ready(function(){
+  $("#btn-interpret").click(function(){
+    console.log('something');
+    $('#interpret-result').empty();
+    interpretText = document.getElementById('interpret-text').value;
+   // $("p").slideToggle();
+   for(i=0;i<interpretText.length;i++) {
+     if (i < 8) {
+        var m = interpretText[i];
+        var n = lib1.indexOf(m);
+        var o = string64[n];
+        $('#interpret-result').append(o);
+        }
+    else if (i < 16) {
+        var m = interpretText[i];
+        var n = lib2.indexOf(m);
+        var o = string64[n];
+        $('#interpret-result').append(o);
+        }
+    else if (i < 24) {
+        var m = interpretText[i];
+        var n = lib3.indexOf(m);
+        var o = string64[n];
+        $('#interpret-result').append(o);
+        }
+    else {
+        var m = interpretText[i];
+        var n = lib4.indexOf(m);
+        var o = string64[n];
+        $('#interpret-result').append(o);
+        }
+    }
+  });
+});
+</script>
